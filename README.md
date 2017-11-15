@@ -37,3 +37,14 @@ function randomColor(){
     return '#' + Math.floor(Math.random()*(1<<24).toString(16));
 }
 ```
+
+```javascript
+/**
+*
+* @desc 设置滚动到距离顶部的位置
+*/
+function setScrollTo(val){
+    window.scrollTo(0,val);
+    return val;
+}
+```
