@@ -296,29 +296,35 @@ function min(){
      * @param {Number3}
      * @return {Array}
      */
-    function range(start,end,step) {
-    if(arguments.length === 1){
-        var arr1 = [];
-        for(var i = 0; i < arguments[0]; i++){
-            arr1.push(i);
+    function range(start,stop,step){
+        if(arguments.length === 0){
+            return "Sorry, you must assign at least 1 param";
         }
-        return arr1;
-    }
-    if(arguments.length === 2){
-        var arr2 = [];
-        for(var j = arguments[0]; j < arguments[1]; j++){
-            arr2.push(j);
+        if(arguments.length === 1){
+            let arr1 = [];
+            for(let i = 0; i < arguments[0]; i++){
+                arr1.push(i);
+            }
+            return arr1;
         }
-        return arr2;
-    }
-    if(arguments.length === 3){
-        var arr3 = [];
-        for(var u = arguments[0]; u < arguments[1]; u+=arguments[2]){
-            arr3.push(u);
+        if(arguments.length === 2){
+            let arr2 = [];
+            for(let i = arguments[0]; i < arguments[1]; i++){
+                arr2.push(i);
+            }
+            return arr2;
         }
-        return arr3;
+        if(arguments.length === 3){
+            let arr3 = [];
+            for(let i = arguments[0]; i < arguments[1]; i+=arguments[2]){
+                arr3.push(i)
+            }
+            return arr3;
+        }
+        if(arguments.length > 3){
+            return "Sorry, you out of the range";
+        }
     }
-}
 ```
 
 ## 函数getCookie
