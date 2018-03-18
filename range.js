@@ -1,5 +1,5 @@
 /**
- * @desc 实现range函数功能
+ * @desc 实现Python's range函数功能
  * @param {Number1}
  * @param {Number2}
  * @param {Number3}
@@ -9,26 +9,24 @@ function range(start, stop, step) {
     if (arguments.length === 0) {
         return "Sorry, you must assign at least 1 param";
     }
-    if (arguments.length === 1) {
-        let arr1 = [];
-        for (let i = 0; i < arguments[0]; i++) {
-            arr1.push(i);
+    let arr = []
+    if(arguments.length === 1){
+        for(let i = 0; i < arguments[0]; i++){
+            arr.push(i);
         }
-        return arr1;
+        return arr;
     }
-    if (arguments.length === 2) {
-        let arr2 = [];
-        for (let i = arguments[0]; i < arguments[1]; i++) {
-            arr2.push(i);
+    if(arguments.length === 2){
+        for(let i = arguments[0]; i < arguments[1]; i++){
+            arr.push(i);
         }
-        return arr2;
+        return arr;
     }
-    if (arguments.length === 3) {
-        let arr3 = [];
-        for (let i = arguments[0]; i < arguments[1]; i += arguments[2]) {
-            arr3.push(i)
+    if(arguments.length === 3){
+        for(let i = arguments[0]; i < arguments[1]; i += arguments[2]){
+            arr.push(i);
         }
-        return arr3;
+        return arr;
     }
     if (arguments.length > 3) {
         return "Sorry, you out of the range";
