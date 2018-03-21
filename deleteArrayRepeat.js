@@ -30,4 +30,9 @@ function deleteArrayRepeat(arr){
 function deleteArrayRepeat(arr){
     return Array.from(new Set(arr));
 }
+
+function deleteArrayRepeat(arr){
+    return arr.filter((item,index,self) => self.indexOf(item) === index);
+}
+
 console.log(deleteArrayRepeat([2,2,3,3,4,5,6,7,1,4,3]))
