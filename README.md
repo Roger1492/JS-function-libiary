@@ -6,6 +6,8 @@
 
 [数组去重](deleteArrayRepeat.js)
 
+[二维数组一维化](flattened.js)
+
 [函数getCookie](getCookie.js)
 
 [根据keycode获得键名](getKeyName.js)
@@ -19,6 +21,8 @@
 [找到一组数中的最大数](maxNumber.js)
 
 [找到一组数中的最小数](minNumber.js)
+
+[各种进制之间的相互转换](numberTranslate.js)
 
 [JS函数repeat的polyfill](polyfill_repeat.js)
 
@@ -39,5 +43,7 @@
 [设置滚动到距离顶部的位置](setScrollTo.js)
 
 [排序算法 - 冒泡排序](sorBubble.js)
+
+[排序算法 - 插入排序](sortInsertion.js)
 
 [排序算法 - 选择排序](sortSelection.js)
