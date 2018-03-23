@@ -1,5 +1,5 @@
 /**
- * @description 二维数组一维化
+ * @description 二维数组一维化(扁平化)
  * @param {Array} 
  * @return {Array}
  */

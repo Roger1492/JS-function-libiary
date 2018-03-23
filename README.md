@@ -44,6 +44,20 @@
 
 [排序算法 - 冒泡排序](sorBubble.js)
 
+[排序算法 - 桶排序](sortBucket.js)
+
+[排序算法 - 计数排序](sortCounting)
+
+[排序算法 - 堆排序](sortHeap.js)
+
 [排序算法 - 插入排序](sortInsertion.js)
 
+[排序算法 - 归并排序](sortMerge.js)
+
+[排序算法 - 快速排序](sortQuick.js)
+
+[排序算法 - 基数排序](sortRadix.js)
+
 [排序算法 - 选择排序](sortSelection.js)
+
+[排序算法 - 希尔排序](sortShell)
