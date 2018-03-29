@@ -34,6 +34,8 @@
 
 [实现Python's range函数功能](range.js)
 
+[5星的打分评测系统](rating.js)
+
 [递归函数](recursion.js)
 
 [把任意字符串重复n次](repeat.js)
