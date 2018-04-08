@@ -2,6 +2,8 @@
 
 ## 打造自己的JavaScript代码库
 
+[JavaScript实现二分法查找](binarySearch.js)
+
 [字母大小写切换](changeCase.js)
 
 [数组去重](deleteArrayRepeat.js)
@@ -43,6 +45,8 @@
 [统计一串字符中相同字符出现的次数](repeatCount.js)
 
 [设置滚动到距离顶部的位置](setScrollTo.js)
+
+[实现对象的浅克隆](shadowClone.js)
 
 [排序算法 - 冒泡排序](sorBubble.js)
 

@@ -1,5 +1,5 @@
 /**
- * @description 二分法查找
+ * @description JavaScript实现二分法查找
  * @param {data,dest,start,end} data全部数组，dest目标, start开始位置, end位置
  * @return {Number} 要查找的东西在数组中的位置
  */
