@@ -4,6 +4,6 @@
  * @return {Array}
  */
 
-function sortBucket(arr){
-     
+function sortBucket(arr) {
+
 }

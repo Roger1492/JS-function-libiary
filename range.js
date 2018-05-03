@@ -10,20 +10,20 @@ function range(start, stop, step) {
         return "Sorry, you must assign at least 1 param";
     }
     let arr = []
-    if(arguments.length === 1){
-        for(let i = 0; i < arguments[0]; i++){
+    if (arguments.length === 1) {
+        for (let i = 0; i < arguments[0]; i++) {
             arr.push(i);
         }
         return arr;
     }
-    if(arguments.length === 2){
-        for(let i = arguments[0]; i < arguments[1]; i++){
+    if (arguments.length === 2) {
+        for (let i = arguments[0]; i < arguments[1]; i++) {
             arr.push(i);
         }
         return arr;
     }
-    if(arguments.length === 3){
-        for(let i = arguments[0]; i < arguments[1]; i += arguments[2]){
+    if (arguments.length === 3) {
+        for (let i = arguments[0]; i < arguments[1]; i += arguments[2]) {
             arr.push(i);
         }
         return arr;
@@ -32,3 +32,6 @@ function range(start, stop, step) {
         return "Sorry, you out of the range";
     }
 }
+
+// 示例
+console.log(range(1, 40, 4));

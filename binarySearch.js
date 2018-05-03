@@ -37,5 +37,6 @@ function binarySearch(data, dest){
     }
     return false;
 }
+
 var arr = [-34, 1, 3, 4, 5, 8, 34, 45, 65, 87];
 console.log(binarySearch(arr,3))

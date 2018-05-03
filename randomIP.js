@@ -9,3 +9,6 @@ function randomIP() {
     var r4 = Math.floor(Math.random() * 256);
     return r1 + '.' + r2 + '.' + r3 + '.' + r4;
 }
+
+// 示例
+console.log(randomIP());

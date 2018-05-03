@@ -4,11 +4,11 @@
  * @return {Array}  输出去重后的数组
  */
 
- // 第一种方法 for
-function deleteArrayRepeat(arr){
+// 第一种方法 for
+function deleteArrayRepeat(arr) {
     let newArr = [];
-    for(let i = 0; i < arr.length; i++){
-        if(newArr.indexOf(arr[i]) === -1){
+    for (let i = 0; i < arr.length; i++) {
+        if (newArr.indexOf(arr[i]) === -1) {
             newArr.push(arr[i]);
         }
     }
@@ -16,10 +16,10 @@ function deleteArrayRepeat(arr){
 }
 
 // 第二种方法 forEach
-function deleteArrayRepeat(arr){
+function deleteArrayRepeat(arr) {
     let newArr = [];
-    arr.forEach((ele,index,arr) => {
-        if(newArr.indexOf(arr[index]) === -1){
+    arr.forEach((ele, index, arr) => {
+        if (newArr.indexOf(arr[index]) === -1) {
             newArr.push(arr[index]);
         }
     });
@@ -27,12 +27,12 @@ function deleteArrayRepeat(arr){
 }
 
 // 第三种方法 ES6数组解构
-function deleteArrayRepeat(arr){
+function deleteArrayRepeat(arr) {
     return Array.from(new Set(arr));
 }
 
-function deleteArrayRepeat(arr){
-    return arr.filter((item,index,self) => self.indexOf(item) === index);
+function deleteArrayRepeat(arr) {
+    return arr.filter((item, index, self) => self.indexOf(item) === index);
 }
 
-console.log(deleteArrayRepeat([2,2,3,3,4,5,6,7,1,4,3]))
+console.log(deleteArrayRepeat([2, 2, 3, 3, 4, 5, 6, 7, 1, 4, 3]))

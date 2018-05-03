@@ -17,7 +17,7 @@ function strToBin(str) {
  * @param {Number}
  * @return {Binary}
  */
-function octToBin(num){
+function octToBin(num) {
     return parseInt(num).toString(2);
 }
 
@@ -27,6 +27,6 @@ function octToBin(num){
  * @param {Binary}
  * @return {Number}
  */
-function binToOct(bin){
-    return parseInt(bin,2);
+function binToOct(bin) {
+    return parseInt(bin, 2);
 }
