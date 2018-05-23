@@ -6,3 +6,5 @@
 function recursion(n) {
     return (n === 0 || n === 1) ? 1 : n * recursion(n - 1);
 }
+
+console.log(recursion(8))
