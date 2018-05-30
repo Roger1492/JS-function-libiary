@@ -1,8 +1,9 @@
 /**
  * @desc 根据keycode获得键名
- * @param {String}
- * @return {Number}
+ * @param {Number}
+ * @return {String}
  */
+
 var keyCodeMap = {
     8: 'Backspace',
     9: 'Tab',
@@ -121,3 +122,5 @@ function getkeyName(keycode) {
         return "";
     }
 }
+
+console.log(getkeyName(2))
