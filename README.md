@@ -14,37 +14,38 @@
 
 
 ## [字符串方法](String)  
-[字母大小写切换](changeCase.js)  
-[统计一串字符中相同字符出现的次数](repeatCount.js)  
+[字母大小写切换](String/changeCase.js)  
+[统计一串字符中相同字符出现的次数](String/repeatCount.js)  
 
 
 ## [数组方法](Array)  
-[数组去重](deleteArrayRepeat.js)  
-[二维数组一维化](flattened.js)  
+[数组去重](Array/deleteArrayRepeat.js)  
+[二维数组一维化](Array/flattened.js)  
 
 
 ## [随机类方法](Random)
 [生成指定范围内的随机数](Random/randomNumber.js)
-[随机生成颜色](randomColor.js)  
-[随机生成一个IP地址](randomIP.js)  
+[随机生成颜色](Random/randomColor.js)  
+[随机生成一个IP地址](Random/randomIP.js)  
 
 
 ## [验证类方法](Validate)  
-[判断是否为Email地址](isEmail.js)  
-[判断是否为IP地址](isIP.js)  
+[判断是否为Email地址](Validate/isEmail.js)  
+[判断是否为IP地址](Validate/isIP.js)  
 
 
 ## [JS内置函数的再实现](JS_Function)   
-[JS函数repeat的polyfill](polyfill_repeat.js)  
-[实现对象的浅克隆](shadowClone.js)  
-[去除字符串中的空格](trim.js)  
-[把任意字符串重复n次](repeat.js)  
+[JS函数repeat的polyfill](JS_Function/polyfill_repeat.js)  
+[实现对象的浅克隆](JS_Function/shadowClone.js)  
+[去除字符串中的空格](JS_Function/trim.js)  
+[把任意字符串重复n次](JS_Function/repeat.js)  
 
 
 ## [数学方法](Math)  
-[找到一组数中的最大数](maxNumber.js)  
-[找到一组数中的最小数](minNumber.js)  
-[各种进制之间的相互转换](numberTranslate.js)  
+[数组求和](Math/sum.js)  
+[找到一组数中的最大数](Math/maxNumber.js)  
+[找到一组数中的最小数](Math/minNumber.js)  
+[各种进制之间的相互转换](Math/numberTranslate.js)  
 [阶乘](Math/factorial.js)  
 [斐波那契数列](Math/fibonacci.js)
 
