@@ -1,5 +1,7 @@
 # 打造自己的JavaScript代码库
 
+> 有的方法是和JavaScript的内置方法功能相同，就当作Polyfill吧!
+
 
 ## 其他
 [JavaScript实现二分法查找](binarySearch.js)  
@@ -16,6 +18,7 @@
 ## [字符串方法](String)  
 [字母大小写切换](String/changeCase.js)  
 [统计一串字符中相同字符出现的次数](String/repeatCount.js)  
+[颠倒字符串的位置](String/reverse.js)  
 
 
 ## [数组方法](Array)  
