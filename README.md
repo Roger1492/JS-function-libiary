@@ -19,11 +19,14 @@
 [字母大小写切换](String/changeCase.js)  
 [统计一串字符中相同字符出现的次数](String/repeatCount.js)  
 [颠倒字符串的位置](String/reverse.js)  
+[获取指定长度的子字符串](String/substr.js)  
+[截取指定区间内的字符串](String/substring.js)  
 
 
 ## [数组方法](Array)  
 [数组去重](Array/deleteArrayRepeat.js)  
 [二维数组一维化](Array/flattened.js)  
+[生成指定范围内的数字](Array/range.js)
 
 
 ## [随机类方法](Random)
