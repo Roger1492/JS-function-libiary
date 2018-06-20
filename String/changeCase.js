@@ -36,3 +36,4 @@ function changeCase(str, type) {
             }
     }
 }
+console.log(changeCase("HeLlpFf", 2))
