@@ -21,6 +21,10 @@
 [颠倒字符串的位置](String/reverse.js)  
 [获取指定长度的子字符串](String/substr.js)  
 [截取指定区间内的字符串](String/substring.js)  
+[返回指定位置的字符串](String/charAt.js)  
+[判断一个字符串是否在另一个字符串中](String/includes.js)  
+[返回指定子string在stirng中的索引](String/indexOf.js)  
+[生成指定数量的字符串](String/repeat.js)  
 
 
 ## [数组方法](Array)  
