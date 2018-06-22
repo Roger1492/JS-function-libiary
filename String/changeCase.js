@@ -1,39 +1,33 @@
 /**
  * @desc 字母大小写切换
  * @param {String}
- * @param {Number [1:首字母大写],[2:大小写转换],[3:全部大写],[4:全部小写]}
+ * @param {Number [1:首字母大写],[2:全部大写],[3:全部小写],[4:大小写转换]}
  * @return {String}
  */
 
-function changeCase(str, type) {
+function changeCase(s, type) {
     switch (type) {
         case 1:
-            {
-                return str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase();
-            }
+            return s.substring(0, 1).toUpperCase() + s.substring(1).toLowerCase();
+
         case 2:
-            {
-                let itemText = "";
-                str.split("").forEach(
-                    function (item) {
-                        if (/^([a-z]+)/.test(item)) {
-                            itemText += item.toUpperCase();
-                        } else if (/^([A-Z]+)/.test(item)) {
-                            itemText += item.toLowerCase();
-                        } else {
-                            itemText += item;
-                        }
-                    });
-                return itemText;
-            }
+            return s.toUpperCase();
+
         case 3:
-            {
-                return str.toUpperCase();
-            }
+            return s.toLowerCase();
+
         case 4:
-            {
-                return str.toLowerCase();
-            }
+            var str = "";
+            s.split("").forEach(function (item) {
+                if (/^([a-z]+)/.test(item)) {
+                    str += item.toUpperCase();
+                } else if (/^([A-Z]+)/.test(item)) {
+                    str += item.toLowerCase();
+                } else {
+                    str += item;
+                }
+            })
+            return str;
     }
 }
 console.log(changeCase("HeLlpFf", 2))

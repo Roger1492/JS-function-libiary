@@ -1,6 +1,6 @@
 /**
- * @name 返回指定子string在stirng中的索引
- * @description 返回指定子string在stirng中的索引
+ * @name 返回指定字符在字符串中的第一个索引
+ * @description 返回指定字符在字符串中的第一个索引
  * @author Roger Shen 
  * @version 0.1
  * @param {String} 字符串
@@ -20,4 +20,4 @@ function indexOf(str, substr, fromIndex) {
     return RegExp(substr, "g").exec(str).index;
 }
 
-console.log(indexOf("Hello,world", "e", 3))
+console.log(indexOf("Hello,world", "l", 2))

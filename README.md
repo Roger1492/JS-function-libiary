@@ -17,14 +17,17 @@
 
 ## [字符串方法](String)  
 [字母大小写切换](String/changeCase.js)  
+[返回指定位置的字符串](String/charAt.js)  
+[判断一个字符串是否在另一个字符串中](String/includes.js)  
+[返回指定字符在字符串中的第一个索引](String/indexOf.js)  // TODO: 写的有问题
+[](String/lastIndexOf.js)   // TODO:   还没有写
+[在原始字符串的后面填充指定长度的字符串](String/padEnd.js)
+[在原始字符串的前面填充指定长度的字符串](String/padStart.js)
+[生成指定数量的字符串](String/repeat.js)  
 [统计一串字符中相同字符出现的次数](String/repeatCount.js)  
 [颠倒字符串的位置](String/reverse.js)  
 [获取指定长度的子字符串](String/substr.js)  
 [截取指定区间内的字符串](String/substring.js)  
-[返回指定位置的字符串](String/charAt.js)  
-[判断一个字符串是否在另一个字符串中](String/includes.js)  
-[返回指定子string在stirng中的索引](String/indexOf.js)  
-[生成指定数量的字符串](String/repeat.js)  
 
 
 ## [数组方法](Array)  
