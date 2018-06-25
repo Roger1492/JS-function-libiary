@@ -1,8 +1,19 @@
 /**
- * @desc 数组去重
+ * @name 数组去重
+ * @description 把数组中的重复元素删除，使用polyfill
  * @param {Array}   输入原始数组
  * @return {Array}  输出去重后的数组
+ * @version 0.2
  */
+
+if(!Array.prototype.deleteRepeat){
+    Array.prototype.deleteRepeat = function(){
+        return Array.from(new Set(this));
+    };
+}
+console.log([2, 2, 3, 3, 4, 5, 6, 7, 1, 4, 3].deleteRepeat());
+
+// TODO:
 
 // 第一种方法 for
 function deleteArrayRepeat(arr) {
@@ -24,11 +35,6 @@ function deleteArrayRepeat(arr) {
         }
     });
     return newArr;
-}
-
-// 第三种方法 ES6数组解构
-function deleteArrayRepeat(arr) {
-    return Array.from(new Set(arr));
 }
 
 function deleteArrayRepeat(arr) {

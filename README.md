@@ -31,9 +31,9 @@
 
 
 ## [数组方法](Array)  
-[数组去重](Array/deleteArrayRepeat.js)  
-[二维数组一维化](Array/flattened.js)  
-[生成指定范围内的数字](Array/range.js)
+[x][在数组随机选择一个元素](Array/choice.js)  
+[-][数组去重](Array/deleteArrayRepeat.js)  TODO: 还没有重构完成
+[ ][生成指定范围内的数字](Array/range.js)
 
 
 ## [随机类方法](Random)
