@@ -12,4 +12,10 @@ function reverse(str){
     }
     return s;
 }
+
+// 使用高阶函数
+function reverse(s){
+    return Array.prototype.map.call(s, x=>x).reverse().join("");
+}
+
 console.log(reverse("String, Hello"))
