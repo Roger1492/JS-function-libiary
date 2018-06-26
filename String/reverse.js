@@ -1,21 +1,19 @@
 /**
+ * @name 颠倒字符串的位置
  * @description 颠倒字符串的位置
- * @param {String}
- * @return {String}
+ * @author Roger Shen
+ * @version 0.2
  */
 
-function reverse(str){
-    let s = "";
-    let len = str.length - 1;
-    for(let i = len; i >= 0; i--){
-        s += str[i];
-    }
-    return s;
+// 第一种实现方法
+if(!String.prototype.reverse){
+    String.prototype.reverse = function(){
+        let s = "";
+        for(let i = this.length-1; i >= 0; i--){
+            s += this[i];
+        }
+        return s;
+    };
 }
 
-// 使用高阶函数
-function reverse(s){
-    return Array.prototype.map.call(s, x=>x).reverse().join("");
-}
-
-console.log(reverse("String, Hello"))
+console.log(("String, Hello").reverse())

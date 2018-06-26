@@ -6,39 +6,45 @@
  * @version 0.2
  */
 
-if(!Array.prototype.deleteRepeat){
-    Array.prototype.deleteRepeat = function(){
+// 第一种方法
+if (!Array.prototype.deleteRepeat) {
+    Array.prototype.deleteRepeat = function () {
         return Array.from(new Set(this));
     };
 }
+
+// 第二种方法
+if (!Array.prototype.deleteRepeat) {
+    Array.prototype.deleteRepeat = function () {
+        return this.filter((item, index, self) => self.indexOf(item) === index)
+    };
+}
+
+
+// 第三种方法
+if (!Array.prototype.deleteRepeat) {
+    Array.prototype.deleteRepeat = function () {
+        let newArr = [];
+        for (let i = 0; i < this.length; i++) {
+            if (newArr.indexOf(this[i]) === -1) {
+                newArr.push(this[i]);
+            }
+        }
+        return newArr;
+    };
+}
+
+// 第四种方法
+if (!Array.prototype.deleteRepeat) {
+    Array.prototype.deleteRepeat = function () {
+        let newArr = [];
+        this.forEach((ele, index, arr) => {
+            if (newArr.indexOf(this[index]) === -1) {
+                newArr.push(this[index]);
+            }
+        })
+        return newArr;
+    };
+}
+
 console.log([2, 2, 3, 3, 4, 5, 6, 7, 1, 4, 3].deleteRepeat());
-
-// TODO:
-
-// 第一种方法 for
-function deleteArrayRepeat(arr) {
-    let newArr = [];
-    for (let i = 0; i < arr.length; i++) {
-        if (newArr.indexOf(arr[i]) === -1) {
-            newArr.push(arr[i]);
-        }
-    }
-    return newArr;
-}
-
-// 第二种方法 forEach
-function deleteArrayRepeat(arr) {
-    let newArr = [];
-    arr.forEach((ele, index, arr) => {
-        if (newArr.indexOf(arr[index]) === -1) {
-            newArr.push(arr[index]);
-        }
-    });
-    return newArr;
-}
-
-function deleteArrayRepeat(arr) {
-    return arr.filter((item, index, self) => self.indexOf(item) === index);
-}
-
-console.log(deleteArrayRepeat([2, 2, 3, 3, 4, 5, 6, 7, 1, 4, 3]))

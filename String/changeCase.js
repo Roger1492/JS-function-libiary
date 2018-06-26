@@ -5,6 +5,12 @@
  * @return {String}
  */
 
+if(!String.prototype.changeCase){
+    String.prototype.changeCase = function(){
+        
+    };
+}
+
 function changeCase(s, type) {
     switch (type) {
         case 1:

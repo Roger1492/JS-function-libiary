@@ -19,21 +19,23 @@
 [字母大小写切换](String/changeCase.js)  
 [返回指定位置的字符串](String/charAt.js)  
 [判断一个字符串是否在另一个字符串中](String/includes.js)  
-[返回指定字符在字符串中的第一个索引](String/indexOf.js)  // TODO: 写的有问题
-[](String/lastIndexOf.js)   // TODO:   还没有写
+[返回指定字符在字符串中的第一个索引](String/indexOf.js)  // TODO: 写的有问题  
+[](String/lastIndexOf.js)   // TODO:   还没有写  
 [在原始字符串的后面填充指定长度的字符串](String/padEnd.js)
 [在原始字符串的前面填充指定长度的字符串](String/padStart.js)
 [生成指定数量的字符串](String/repeat.js)  
-[统计一串字符中相同字符出现的次数](String/repeatCount.js)  
-[颠倒字符串的位置](String/reverse.js)  
+[统计字符串中相同字符出现的次数](String/repeatCount.js)  
+[x][颠倒字符串的位置](String/reverse.js)  
 [获取指定长度的子字符串](String/substr.js)  
 [截取指定区间内的字符串](String/substring.js)  
 
 
 ## [数组方法](Array)  
 [x][在数组随机选择一个元素](Array/choice.js)  
-[-][数组去重](Array/deleteArrayRepeat.js)  TODO: 还没有重构完成
-[ ][生成指定范围内的数字](Array/range.js)
+[-][数组去重](Array/deleteRepeat.js)  
+[x][二维数组一维化(扁平化)](Array/flattened.js)
+[x][生成指定范围内的数字](Array/range.js)  
+[][统计数组中相同元素出现的次数](Array/repeatCount.js)  
 
 
 ## [随机类方法](Random)
