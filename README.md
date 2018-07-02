@@ -3,7 +3,7 @@
 > 有的方法是和JavaScript的内置方法功能相同，就当作Polyfill吧!
 
 
-## 其他
+## 其他  
 [JavaScript实现二分法查找](binarySearch.js)  
 [函数getCookie](getCookie.js)  
 [输入任意键 获取key和keyCode](getKeyAndCode.js)  
@@ -25,21 +25,21 @@
 [在原始字符串的前面填充指定长度的字符串](String/padStart.js)
 [生成指定数量的字符串](String/repeat.js)  
 [统计字符串中相同字符出现的次数](String/repeatCount.js)  
-[x][颠倒字符串的位置](String/reverse.js)  
+[颠倒字符串的位置](String/reverse.js)  
 [获取指定长度的子字符串](String/substr.js)  
 [截取指定区间内的字符串](String/substring.js)  
 
 
 ## [数组方法](Array)  
-[x][在数组随机选择一个元素](Array/choice.js)  
-[-][数组去重](Array/deleteRepeat.js)  
-[x][二维数组一维化(扁平化)](Array/flattened.js)
-[x][生成指定范围内的数字](Array/range.js)  
-[][统计数组中相同元素出现的次数](Array/repeatCount.js)  
+[在数组随机选择一个元素](Array/choice.js)  
+[数组去重](Array/deleteRepeat.js)  
+[二维数组一维化(扁平化)](Array/flattened.js)
+[生成指定范围内的数字](Array/range.js)  
+[统计数组中相同元素出现的次数](Array/repeatCount.js)  
 
 
-## [随机类方法](Random)
-[生成指定范围内的随机数](Random/randomNumber.js)
+## [随机类方法](Random)  
+[生成指定范围内的随机数](Random/randomNumber.js)  
 [随机生成颜色](Random/randomColor.js)  
 [随机生成一个IP地址](Random/randomIP.js)  
 
@@ -49,7 +49,7 @@
 [判断是否为IP地址](Validate/isIP.js)  
 
 
-## [JS内置函数的再实现](JS_Function)   
+## [JS内置函数的再实现](JS_Function)  
 [JS函数repeat的polyfill](JS_Function/polyfill_repeat.js)  
 [实现对象的浅克隆](JS_Function/shadowClone.js)  
 [去除字符串中的空格](JS_Function/trim.js)  
@@ -62,7 +62,7 @@
 [找到一组数中的最小数](Math/minNumber.js)  
 [各种进制之间的相互转换](Math/numberTranslate.js)  
 [阶乘](Math/factorial.js)  
-[斐波那契数列](Math/fibonacci.js)
+[斐波那契数列](Math/fibonacci.js)  
 
 
 ## [排序算法](Sort)  
