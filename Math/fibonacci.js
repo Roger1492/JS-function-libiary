@@ -1,17 +1,19 @@
 /**
- * @description 斐波那契数列
- * @param {Number} 想获得第几项的值
- * @return {Array} 返回那一列的斐波那契数列
+ * @name 生成斐波那契数列
+ * @author Roger Shen
+ * @version 0.1
  */
 
-function fib(n) {
-    if (n == 0) {
-        return 0;
-    } else if (n == 1) {
-        return 1;
-    } else {
-        return fib(n - 1) + fib(n - 2)
+function fib(max) {
+    var t,
+        a = 0,
+        b = 1,
+        arr = [0,1];
+    while(arr.length < max){
+        [a,b] = [b, a+b];
+        arr.push(b);
     }
+    return arr;
 }
 
-console.log(fib(8))    // 1 1 2 3 5 8 13 21
+console.log(fib(8));

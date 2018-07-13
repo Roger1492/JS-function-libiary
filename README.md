@@ -57,12 +57,13 @@
 
 
 ## [数学方法](Math)  
-[数组求和](Math/sum.js)  
+[阶乘](Math/factorial.js)  
+[](Math/fib.js)  
+[斐波那契数列](Math/fibonacci.js)
 [找到一组数中的最大数](Math/maxNumber.js)  
 [找到一组数中的最小数](Math/minNumber.js)  
 [各种进制之间的相互转换](Math/numberTranslate.js)  
-[阶乘](Math/factorial.js)  
-[斐波那契数列](Math/fibonacci.js)
+[数组求和](Math/sum.js)  
 
 
 ## [排序算法](Sort)  
