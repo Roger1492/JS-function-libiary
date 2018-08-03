@@ -4,7 +4,8 @@
  * @return {Number}
  */
 
- function sum(arr){
+// 普通方法实现
+function sum(arr){
     let s = 0;
      for(let i = 0; i < arr.length; i++){
         s += arr[i];
@@ -12,4 +13,9 @@
      return s;
  }
 
- console.log(sum([1,2,3,4,5,6,7,8]));
+// 高阶函数实现
+function sum(array){
+    return array.reduce((a,b) => a + b);
+}
+
+console.log(sum([4,2,8,6]));
