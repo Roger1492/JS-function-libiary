@@ -129,35 +129,6 @@
 
 
     /**
-    * 
-    * 返回数组所有元素之和
-    * 
-    * @description
-    * 判断每一个数组元素的类型，把所有非数字类型全部转化为数字类型，并全部保存到一个新的数组中。
-    * 如果是空值或非有效值，则删除这个元素。
-    * 
-    * @since 0.1.0
-    * @param {*} array
-    * @returns {Number} 返回数组中的所有数字之和
-    * @author Roger Shen
-    * 
-    * @example
-    * _.sum(['54','4g','34ge','9fj3'])
-    * // => 101
-    * 
-    */
-    _.sum = function (array) {
-        let newArr = [];
-        array.forEach((element, index, arr) => {
-            let newE = parseInt(element);
-            newE / newE === 1 ? newArr.push(newE) : '';       // 如果是有效数字，则加入到新数组中。
-        })
-        return newArr.reduce((a, b) => a + b);
-    }
-
-
-
-    /**
      * 
      * 返回数组所有元素之积
      * 
@@ -247,7 +218,7 @@
 
     //////////////////////////////
     //////// Random 方法 /////////
-    /////////////////////////////
+    //////////////////////////////
 
 
     /**
@@ -292,4 +263,105 @@
         return R;
     }
 
+
+    //////////////////////////////
+    //////// Math 方法 /////////
+    //////////////////////////////
+
+    /**
+     * 
+     * 返回数组中最小的数
+     * 
+     * @since 0.1.0
+     * @param {Array} array 
+     * @returns {Number}
+     * @author Roger Shen
+     */
+    _.min = function (array) {
+        return array.sort((a, b) => (a - b))[0];
+    };
+
+
+    /**
+     * 
+     * 返回数组中最大的数
+     * 
+     * @since 0.1.0
+     * @param {Array} array 
+     * @returns {Number}  
+     * @author Roger Shen
+     */
+    _.max = function (array) {
+        return array.sort((a, b) => (b - a))[0];
+    };
+
+
+    /**
+     * 
+     * 阶乘
+     * 
+     * @since   0.1.0
+     * @param {Number} num 
+     * @returns {Number}
+     * @author Roger Shen
+     * 
+     * @example
+     * 
+     * _.fac(6);
+     * // => 720
+     */
+    _.fac = function (num) {
+        return (num === 0 || num === 1) ? 1 : num * arguments.callee(num - 1);
+    }
+
+
+    /**
+     * 
+     * 给定长度，生成斐波那契数列
+     * 
+     * @since 0.1.0
+     * @param {Number} len 要生成的斐波那契数列的长度
+     * @returns {Array}
+     * @author Roger Shen
+     */
+    _.fib = function (len) {
+        let a = 0,
+            b = 1,
+            arr = [0, 1];
+        while(arr.length < len){
+            [a, b] = [b, a+b];
+            arr.push(b);
+        }
+        return arr;
+    }
+
+
+    /**
+    * 
+    * 返回数组所有元素之和
+    * 
+    * @description
+    * 判断每一个数组元素的类型，把所有非数字类型全部转化为数字类型，并全部保存到一个新的数组中。
+    * 如果是空值或非有效值，则删除这个元素。
+    * 
+    * @since 0.1.0
+    * @param {*} array
+    * @returns {Number} 返回数组中的所有数字之和
+    * @author Roger Shen
+    * 
+    * @example
+    * _.sum(['54','4g','34ge','9fj3'])
+    * // => 101
+    * 
+    */
+   _.sum = function (array) {
+    let newArr = [];
+    array.forEach((element, index, arr) => {
+        let newE = parseInt(element);
+        newE / newE === 1 ? newArr.push(newE) : '';       // 如果是有效数字，则加入到新数组中。
+    })
+        return newArr.reduce((a, b) => a + b);
+    }
+    
+    
 })()

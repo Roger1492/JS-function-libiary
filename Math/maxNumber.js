@@ -5,7 +5,6 @@
  */
 function max() {
     var arr = [];
-    var max;
     for (var i = 0; i < arguments.length; i++) {
         arr.push(arguments[i]);
     }

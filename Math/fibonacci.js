@@ -5,8 +5,7 @@
  */
 
 function fib(max) {
-    var t,
-        a = 0,
+    var a = 0,
         b = 1,
         arr = [0,1];
     while(arr.length < max){
