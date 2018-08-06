@@ -1,5 +1,9 @@
 /**
- * @desc 实现Python's range函数功能
+ * 
+ * 实现Python's range函数功能
+ * 
+ * @desc 与Array/range.js 内容重复，而且这个实现很差
+ * 
  * @param {Number1}
  * @param {Number2}
  * @param {Number3}
