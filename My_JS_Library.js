@@ -1,11 +1,116 @@
 (function () {
-    var root = this;
+    // var root = this;
+    var root = (typeof self == 'object' && self.self == self && self) ||
+               (typeof global == 'object' && global.global == global && global) ||
+               this ||
+               {};
     var _ = {};
     root._ = _;
 
     /////////////////////////////
-    ///////// Array 方法 //////////
+    ///////// Array 方法 ////////
     ////////////////////////////
+
+
+    // TODO: 未完成
+    _.zip = function (...arr) {
+        let biggest = [];
+        let len = arr.length;
+        
+        for(let i = 0; i < 2; i++){
+            let na = new Array();
+            
+            for(let j = 0; j < len; j++){
+                let index = 0;
+                na.push(arr[j][index++]);
+            }
+
+            biggest.push(na);
+        }
+        return biggest;
+    }
+
+
+    /**
+     * 
+     * 删除数组前面指定个数的元素
+     * 
+     * @since 0.1.0
+     * @param {Array} array 原始数组
+     * @param {Array} n 要删除的长度
+     * @returns {Array} 返回新数组
+     * @author Roger Shen
+     * 
+     * @example 
+     * _.drop([1,2,3,4,5,6,7,8] ,0)
+     * // => [ 1, 2, 3, 4, 5, 6, 7, 8 ]
+     *
+     * _.drop([1,2,3,4,5,6,7,8], 1)
+     * // => [ 2, 3, 4, 5, 6, 7, 8 ]
+     * 
+     * _.drop([1,2,3,4,5,6,7,8], 4)
+     * // => [ 5, 6, 7, 8 ]
+     * 
+     * _.drop([1,2,3,4,5,6,7,8], 10)
+     * // => []
+     */
+    _.drop = function (array, n=1) {
+        return array.slice(n);
+    };
+
+
+    /**
+     * 
+     * 删除数组后面指定个数的元素
+     * 
+     * @since 0.1.0
+     * @param {*} array 原始数组
+     * @param {*} n 要删除的长度
+     * @returns {Array} 返回新数组
+     * @author Roger Shen
+     * 
+     * @example
+     * 
+     * _.dropRight([1,2,3,4,5,6,7,8], 2)
+     * [ 1, 2, 3, 4, 5, 6 ]
+     * 
+     * _.dropRight([1,2,3,4,5,6,7,8], 10)
+     * [ 1, 2, 3, 4, 5, 6 ]
+     * 
+     * _.dropRight([1,2,3,4,5,6,7,8], 0)
+     * [ 1, 2, 3, 4, 5, 6, 7, 8 ]
+     */
+    _.dropRight = function (array, n=1) {
+        const len = array == null ? 0 : array.length;
+        return array.slice(0,len-n);
+    }
+
+
+    /**
+     * 
+     * 删除所有数组元素为falsy - (false,NaN,'',0,undefined) 的值。
+     * 
+     * @since 0.1.0
+     * @param {Array} array 原始数组
+     * @returns {Array} array 删除所有无效元素的新数组
+     * @author Roger Shen
+     * 
+     * @example 
+     * _.compact([4,'tes',null, undefined,'of', '', NaN])
+     * // => [ 4, 'tes', 'of' ]
+     * 
+     */
+    _.compact = function (array) {
+        let newArr = [];
+        if(array == null){ return; }
+
+        array.forEach((ele,ind,arr) => {
+            if(ele){
+                newArr.push(ele);
+            }
+        })
+        return newArr;
+    }
 
 
     /**
@@ -365,3 +470,5 @@
     
     
 })()
+
+console.log(_.zip([1,2],[3,4],[5,6,7]))
