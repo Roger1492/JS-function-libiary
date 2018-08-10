@@ -5,35 +5,35 @@
  * @return {String}
  */
 
-if(!String.prototype.changeCase){
-    String.prototype.changeCase = function(){
-        
-    };
+if (!String.prototype.changeCase) {
+  String.prototype.changeCase = function () {
+
+  };
 }
 
 function changeCase(s, type) {
-    switch (type) {
-        case 1:
-            return s.substring(0, 1).toUpperCase() + s.substring(1).toLowerCase();
+  switch (type) {
+    case 1:
+      return s.substring(0, 1).toUpperCase() + s.substring(1).toLowerCase();
 
-        case 2:
-            return s.toUpperCase();
+    case 2:
+      return s.toUpperCase();
 
-        case 3:
-            return s.toLowerCase();
+    case 3:
+      return s.toLowerCase();
 
-        case 4:
-            var str = "";
-            s.split("").forEach(function (item) {
-                if (/^([a-z]+)/.test(item)) {
-                    str += item.toUpperCase();
-                } else if (/^([A-Z]+)/.test(item)) {
-                    str += item.toLowerCase();
-                } else {
-                    str += item;
-                }
-            })
-            return str;
-    }
+    case 4:
+      var str = "";
+      s.split("").forEach(function (item) {
+        if (/^([a-z]+)/.test(item)) {
+          str += item.toUpperCase();
+        } else if (/^([A-Z]+)/.test(item)) {
+          str += item.toLowerCase();
+        } else {
+          str += item;
+        }
+      })
+      return str;
+  }
 }
 console.log(changeCase("HeLlpFf", 2))
