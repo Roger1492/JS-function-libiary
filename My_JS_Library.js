@@ -7,27 +7,202 @@
     var _ = {};
     root._ = _;
 
-    /////////////////////////////
+    ////////////////////////////
     ///////// Array 方法 ////////
     ////////////////////////////
 
 
+    // TODO: 
+    _.without = function (arrayList,...arg) {
+        for(let i = 0; i < arg.length; i++){
+            arrayList.forEach((ele, ind, arr) => {
+                if(ele == arg[i]){
+                    ele = null;
+                }
+            })
+        }
+        return arrayList;
+    }
+
+
+    /**
+     * 
+     * 查找值是否存在于数组中
+     * 
+     * @since 0.1.0
+     * @param {Array} arrayList 数组
+     * @param {*} value 要查找的值
+     * @param {Number} fromIndex 起始位置
+     * @returns {Boolean}
+     * @author Roger Shen
+     * 
+     * @example 
+     * 
+     * _.contains([1,2,3,4,5,6,7,8,9],3)
+     * // => true
+     * _.contains([1,2,3,4,5,6,7,8,9],3,0)
+     * // => true
+     * _.contains([1,2,3,4,5,6,7,8,9],3,3)
+     * // => false
+     * _.contains([1,2,3,4,5,6,7,8,9],3,6)
+     * // => false
+     * 
+     */
+    _.contains = function (arrayList, value, fromIndex) {
+        let newArr = (fromIndex==0 || fromIndex == null) ? arrayList : arrayList.slice(fromIndex, arrayList.length);
+        return newArr.includes(value) ? true : false;
+    }
+
+
+    /**
+     * 
+     * 从arrayList中随机找出n个新数组组成新的数组
+     * 
+     * @since 0.1.0
+     * @param {Array} arrayList 原始数组
+     * @param {Number} n 长度
+     * @author Roger Shen
+     * 
+     * @example 
+     * _.simple([1,2,3,4,5,6,7,8,9,10],4)
+     * // => [9, 2, 3, 7]
+     * _.simple([1,2,3,4,5,6,7,8,9,10],2)
+     * // => [3, 8]
+     */
+    _.simple = function (arrayList, n) {
+        let alen = arrayList.length;
+        let newArr = [];
+        for(let i = 0; i < n; i++){
+            let r = Math.floor(Math.random() * alen);
+            newArr.push(arrayList[r]);
+        }
+        return newArr;
+    }
+
+
+    /**
+     * 
+     * 返回两个数组中不同的元素，并合并为一个新数组
+     * 
+     * @since 0.1.0
+     * @param {Array1} array1 第一个数组
+     * @param {Array2} array2 第二个数组
+     * @returns {Array}
+     * @author Roger Shen
+     */
+    _.xor = function (array1, array2) {
+        let newArr = [];
+        array1.forEach((ele1,ind1,arr1) => {
+            if(!array2.includes(ele1)){
+                newArr.push(ele1);
+            }
+            return newArr;
+        })
+
+        array2.forEach((ele2,ind2,arr2) => {
+            if(!array1.includes(ele2)){
+                newArr.push(ele2);
+            }
+            return newArr;
+        })
+
+        return newArr;
+    };
+
+
+    /**
+     * 
+     * 反转数组中的元素，第一个元素变为最后一个。
+     * 
+     * @since 0.1.0
+     * @param {Array} array 原始数组
+     * @returns {Array} array 新数组
+     * @author Roger Shen
+     */
+    _.reverse = function (array) {
+        let newArr = [];
+        for(let i = array.length-1; i >= 0; i--){
+            newArr.push(array[i]);
+        }
+        return newArr;
+    };
+
+
+    /**
+     * 
+     * 返回数组索引为index的元素，如果是负数，则返回倒数的索引。
+     * 
+     * @since 0.1.0
+     * @param {Array} array 原始数组
+     * @param {Number} index 要返回的索引
+     * @returns {*} 指定索引位置的元素
+     * @author Roger Shen
+     * 
+     */
+    _.nth = function (array, index) {
+        if(index >= 0){
+            return array[index];
+        } else {
+            return array[array.length - Math.abs(index)]
+        }
+    };
+
+
+    /**
+     * 
+     * 把元素全部添加到数组的后面
+     * 
+     * @since 0.1.0
+     * @param {Array} array 原始数组
+     * @param {*} arg 要添加的元素
+     * @returns {Array} 新数组
+     * @author Roger Shen
+     */
+    _.pushAll = function (array, ...arg) {
+        arg.forEach((ele,ind,arr) => {
+            array.push(ele);
+        })
+        return array;
+    };
+
+
+    // TODO: 未完成
+    _.pull = function () {};
+
+
+    // TODO: 未完成
+    _.join = function (array, separator){
+
+    }
+
+
+    /**
+     * 
+     * 返回集合的长度或者是可迭代字符串的长度
+     * 
+     * @since 0.1.0
+     * @param {*} 
+     * @returns {Number}
+     * @author Roger Shen
+     * 
+     * @example
+     * _.size("Hello,world")
+     * // => 11
+     * _.size(["one","two","three","four"])
+     * // => 4
+     * _.size({a:"one",b:"two",c:"three"})
+     * // => 3
+     * 
+     */
+    // TODO: 未完成
+    _.size = function (n) {
+        return Array.from(Object.keys(n)).length;
+    }
+
+
     // TODO: 未完成
     _.zip = function (...arr) {
-        let biggest = [];
-        let len = arr.length;
         
-        for(let i = 0; i < 2; i++){
-            let na = new Array();
-            
-            for(let j = 0; j < len; j++){
-                let index = 0;
-                na.push(arr[j][index++]);
-            }
-
-            biggest.push(na);
-        }
-        return biggest;
     }
 
 
@@ -369,9 +544,33 @@
     }
 
 
+    ///////////////////////////////
+    ////////   Math 方法  /////////
     //////////////////////////////
-    //////// Math 方法 /////////
-    //////////////////////////////
+
+
+    /**
+     * 
+     * 加减乘除 四则运算
+     * 
+     * @param {*} augend 
+     * @param {*} addend 
+     */
+    _.add = function (augend, addend) {
+        return augend + addend;
+    }
+
+    _.subtract = function (minuend, subtrahend) {
+        return minuend - subtrahend;
+    }
+
+    _.multiply = function(multiplier, multiplicand) {
+        return multiplier * multiplicand;
+    }
+
+    _.divide = function (devidend, divisor) {
+        return devidend / divisor;
+    }
 
     /**
      * 
@@ -467,8 +666,99 @@
     })
         return newArr.reduce((a, b) => a + b);
     }
-    
-    
-})()
 
-console.log(_.zip([1,2],[3,4],[5,6,7]))
+
+    ////////////////////////////////
+    /////////  Lang     
+    ////////////////////////////////
+
+    
+    /**
+     * 
+     * 判断第一个值是否比第二个值大
+     * 
+     * @since 0.1.0
+     * @param {Number} v 要比较的值
+     * @param {Number} o 要比较的第二个值
+     * @author Roger Shen
+     * @returns {Boolean}
+     * 
+     */
+    _.gt = function (v, o) {
+        return v > o ? "true" : "false";
+    }
+
+    
+    /**
+     * 
+     * 判断第一个值是否比第二个值小
+     * 
+     * @since 0.1.0
+     * @param {Number} v 要比较的值
+     * @param {Number} o 要比较的第二个值
+     * @returns {Boolean}
+     * @author Roger Shen
+     * 
+     */
+    _.lt = function (v, o) {
+        return v < o ? "true" : "false";
+    }
+
+
+    /**
+     * 
+     * 判断第一个值是否大于等于第二个值
+     * 
+     * @since 0.1.0
+     * @param {Number} v 要比较的值
+     * @param {Number} o 要比较的第二个值
+     * @returns {Boolean}
+     * 
+     */
+    _.gte = function (v, o) {
+        return v >= o ? "true" : "false";
+    }
+
+
+    /**
+     * 
+     * 判断第一个值是否小于等于第二个值
+     * 
+     * @since 0.1.0
+     * @param {Number} v 要比较的值
+     * @param {Number} o 要比较的第二个值
+     * @returns {Boolean}
+     * 
+     */
+    _.lte = function (v, o) {
+        return v <= o ? "true" : "false";
+    }
+
+
+    // TODO:
+    _.isArray = function (array) {
+
+    }
+
+
+    /**
+     * 
+     * 判断布尔值
+     * 
+     * @since 0.1.0
+     * @param {Boolean} bool 布尔值
+     * @returns {BOolean} 返回布尔值
+     * @author Roger Shen
+     */
+    _.isBoolean = function (bool) {
+        if(bool === true || bool === false){
+            return true;
+        }
+        if(Boolean(bool)){
+            return false;
+        }
+        if(bool === null){
+            return false;
+        }
+    }
+})()
