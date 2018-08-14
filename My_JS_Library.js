@@ -7,22 +7,152 @@
     var _ = {};
     root._ = _;
 
-    ////////////////////////////
+    /////////////////////////////
     ///////// Array 方法 ////////
     ////////////////////////////
 
 
+    /**
+     * 
+     * 把多个数组列表中相同的元素筛选出来组成一个新数组
+     * 
+     * @since 0.1.0
+     * @param {*Array} array 
+     * @returns {Array}
+     * @author Roger Shen
+     * 
+     */
     // TODO: 
-    _.without = function (arrayList,...arg) {
-        for(let i = 0; i < arg.length; i++){
-            arrayList.forEach((ele, ind, arr) => {
-                if(ele == arg[i]){
-                    ele = null;
+    _.intersection = function (...array) {
+        let newArr = [];
+        for(let i = 0; i < array.length; i++){
+            array[i].forEach((element,index,array) => {
+                array[i+1].includes(element);
+                newArr.push(element);
+            })
+        }
+        return newArr;
+    }
+
+
+    /**
+     * 
+     * 返回数组的索引
+     * 
+     * @since 0.1.0
+     * @param {Array} arrayList 
+     * @param {*} value 
+     * @returns {Number}
+     * @author Roger Shen
+     */
+    _.indexOf = function (arrayList, value){
+        return arrayList.indexOf(value);
+    }
+
+
+    /**
+     * 
+     * 返回两个数组中不同的元素
+     * 
+     * @since 0.1.0
+     * @param {Array} array
+     * @param {Array} other
+     * @returns {Array}
+     * @author Roger Shen
+     */
+    // TODO:
+    _.difference = function (array, other) {
+        let newArr = [];
+        for(let i = 0; i < array.length; i++){
+            array.forEach((ele, ind, arr) => {
+                if(other.includes(ele)){
+                    newArr.push(ele);
                 }
             })
         }
+        return newArr;
+    };
+
+
+    // TODO: 
+    _.shuffle = function () {
+
+    };
+
+
+    /**
+     * 
+     * 返回除了最后一个元素的新数组，n是要排除的最后n个元素
+     * 
+     * @since 0.1.0
+     * @param {Array} arrayList 原始数组
+     * @param {Number} n 长度
+     * @returns {Array}
+     * @author Roger Shen
+     */
+    _.initial = function (arrayList, n=1) {
+        return arrayList.slice(0, arrayList.length-n);
+    };
+
+
+    /**
+     * 
+     * 从数组中随机选出n个元素组成一个新的数组。如果n=1，则随机返回一个元素
+     * 
+     * @since 0.1.0
+     * @param {Array} arrayList 原始数组
+     * @param {Number} n n个随机数
+     * @returns {Array}
+     * @author Roger Shen
+     * 
+     * @example 
+     * 
+     * _.sample([1,2,3,4,5,6,7,8],4)
+     * // => [3, 1, 6, 5]
+     * _.sample([1,2,3,4,5,6,7,8],2)
+     * // => [5, 3]
+     * _.sample([1,2,3,4,5,6,7,8],6)
+     * // => [4, 5, 2, 1, 6, 7]
+     * 
+     */
+    _.sample = function (arrayList, n=1) {
+        let newArr = [];
+        for(let i = 0; i < n; i++){
+            let r = Math.floor(Math.random()*arrayList.length);
+            newArr.push(arrayList[r]);
+            _.remove(arrayList,arrayList[r]);
+        }
+        return newArr;
+    };
+
+
+    /**
+     * 
+     * 删除数组中指定元素
+     * 
+     * @since 0.1.0
+     * @param {Array} arrayList 原始数组
+     * @param {*} rm 要删除的数组元素
+     * @author Roger Shen
+     * 
+     */
+    _.remove = function (arrayList, rm) {
+        var index = arrayList.indexOf(rm);
+        if(index > -1){
+            arrayList.splice(index, 1);
+        }
+    };
+
+
+    // TODO: 
+    _.without = function (arrayList,...arg) {
+        for(let i = 0; i < arrayList.length; i++){
+            if(arrayList.includes(arg[i])){
+                _.remove(arrayList, arg[i]);
+            }
+        }
         return arrayList;
-    }
+    };
 
 
     /**
@@ -51,33 +181,7 @@
     _.contains = function (arrayList, value, fromIndex) {
         let newArr = (fromIndex==0 || fromIndex == null) ? arrayList : arrayList.slice(fromIndex, arrayList.length);
         return newArr.includes(value) ? true : false;
-    }
-
-
-    /**
-     * 
-     * 从arrayList中随机找出n个新数组组成新的数组
-     * 
-     * @since 0.1.0
-     * @param {Array} arrayList 原始数组
-     * @param {Number} n 长度
-     * @author Roger Shen
-     * 
-     * @example 
-     * _.simple([1,2,3,4,5,6,7,8,9,10],4)
-     * // => [9, 2, 3, 7]
-     * _.simple([1,2,3,4,5,6,7,8,9,10],2)
-     * // => [3, 8]
-     */
-    _.simple = function (arrayList, n) {
-        let alen = arrayList.length;
-        let newArr = [];
-        for(let i = 0; i < n; i++){
-            let r = Math.floor(Math.random() * alen);
-            newArr.push(arrayList[r]);
-        }
-        return newArr;
-    }
+    };
 
 
     /**
@@ -173,7 +277,7 @@
     // TODO: 未完成
     _.join = function (array, separator){
 
-    }
+    };
 
 
     /**
@@ -194,16 +298,17 @@
      * // => 3
      * 
      */
-    // TODO: 未完成
     _.size = function (n) {
+        // 两种实现都可以
         return Array.from(Object.keys(n)).length;
-    }
+        // return Object.keys(n).length;
+    };
 
 
     // TODO: 未完成
     _.zip = function (...arr) {
         
-    }
+    };
 
 
     /**
@@ -258,7 +363,7 @@
     _.dropRight = function (array, n=1) {
         const len = array == null ? 0 : array.length;
         return array.slice(0,len-n);
-    }
+    };
 
 
     /**
@@ -285,7 +390,7 @@
             }
         })
         return newArr;
-    }
+    };
 
 
     /**
@@ -312,7 +417,7 @@
             }
             return allNames;
         }, {})
-    }
+    };
 
     
     /**
@@ -330,7 +435,7 @@
      */
     _.flat = function (array) {
         return array.reduce((a, b) => a.concat(b));
-    }
+    };
 
     /**
      * 
@@ -350,7 +455,7 @@
 
     _.first = function (array) {
         return (array != null && array.length) ? array[0] : undefined;
-    }
+    };
 
 
     /**
@@ -370,7 +475,7 @@
      */
     _.last = function (array) {
         return (array !== null && array.length) ? array[array.length - 1] : undefined;
-    }
+    };
 
 
     /**
@@ -403,9 +508,8 @@
                 newArr[i][j]=== undefined ? newArr[i].pop() : '';       // 如果分组中有undefined，则删除它
             }
         }
-
         return newArr;
-    }
+    };
 
 
     /**
@@ -426,7 +530,7 @@
             newE / newE === 1 ? newArr.push(newE) : '';
         })
         return newArr.reduce((a, b) => a * b);
-    }
+    };
 
 
     /**
@@ -513,7 +617,7 @@
      */
     _.randomColor = function(){
         return "#" + Math.floor(Math.random()* (1 << 24)).toString(16);
-    }
+    };
 
 
     /**
@@ -541,7 +645,7 @@
             R += r + '\n';
         }
         return R;
-    }
+    };
 
 
     ///////////////////////////////
@@ -558,19 +662,19 @@
      */
     _.add = function (augend, addend) {
         return augend + addend;
-    }
+    };
 
     _.subtract = function (minuend, subtrahend) {
         return minuend - subtrahend;
-    }
+    };
 
     _.multiply = function(multiplier, multiplicand) {
         return multiplier * multiplicand;
-    }
+    };
 
     _.divide = function (devidend, divisor) {
         return devidend / divisor;
-    }
+    };
 
     /**
      * 
@@ -616,7 +720,7 @@
      */
     _.fac = function (num) {
         return (num === 0 || num === 1) ? 1 : num * arguments.callee(num - 1);
-    }
+    };
 
 
     /**
@@ -637,7 +741,7 @@
             arr.push(b);
         }
         return arr;
-    }
+    };
 
 
     /**
@@ -665,12 +769,36 @@
         newE / newE === 1 ? newArr.push(newE) : '';       // 如果是有效数字，则加入到新数组中。
     })
         return newArr.reduce((a, b) => a + b);
-    }
+    };
 
 
     ////////////////////////////////
     /////////  Lang     
     ////////////////////////////////
+
+
+
+    /**
+     * 
+     * 把对象转化为 `[key, value]`对
+     * 
+     * @since 0.1.0
+     * @param {Object} obj 
+     * @returns {Array}
+     */
+    // TODO:
+    _.pairs = function (obj) {
+        let newArr = [];
+        let keys = Object.keys(obj);
+        let values = Object.values(obj);
+        for(let i = 0; i < keys.length; i++){
+            let nr = [];
+            newArr.push(nr);
+            nr.push(keys[i]);
+            nr.push(values[i]);
+        }
+        return newArr;
+    }
 
     
     /**
@@ -686,7 +814,7 @@
      */
     _.gt = function (v, o) {
         return v > o ? "true" : "false";
-    }
+    };
 
     
     /**
@@ -702,7 +830,7 @@
      */
     _.lt = function (v, o) {
         return v < o ? "true" : "false";
-    }
+    };
 
 
     /**
@@ -717,7 +845,7 @@
      */
     _.gte = function (v, o) {
         return v >= o ? "true" : "false";
-    }
+    };
 
 
     /**
@@ -732,13 +860,13 @@
      */
     _.lte = function (v, o) {
         return v <= o ? "true" : "false";
-    }
+    };
 
 
     // TODO:
     _.isArray = function (array) {
 
-    }
+    };
 
 
     /**
@@ -760,5 +888,5 @@
         if(bool === null){
             return false;
         }
-    }
+    };
 })()
