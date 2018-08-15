@@ -82,6 +82,21 @@
 
     /**
      * 
+     * 返回数组中去除重复值后的新数组
+     * 
+     * @since 0.1.0
+     * @param {Array} array 
+     * @returns {Array}
+     * @author Roger Shen
+     * 
+     */
+    _.uniq = function (array) {
+        return Array.from(new Set(array));
+    };
+
+
+    /**
+     * 
      * 返回除了最后一个元素的新数组，n是要排除的最后n个元素
      * 
      * @since 0.1.0
@@ -146,7 +161,7 @@
 
     // TODO: 
     _.without = function (arrayList,...arg) {
-        for(let i = 0; i < arrayList.length; i++){
+        for(let i = 0; i < arg.length; i++){
             if(arrayList.includes(arg[i])){
                 _.remove(arrayList, arg[i]);
             }
@@ -777,6 +792,17 @@
     ////////////////////////////////
 
 
+    /**
+     * 返回一个当前时间的整数时间戳
+     * @since 0.1.0
+     * @returns {Number}
+     * @author Roger Shen
+     * 
+     */
+    _.now = function () {
+        return new Date().getTime();
+    };
+
 
     /**
      * 
@@ -785,6 +811,7 @@
      * @since 0.1.0
      * @param {Object} obj 
      * @returns {Array}
+     * 
      */
     // TODO:
     _.pairs = function (obj) {
@@ -799,6 +826,26 @@
         }
         return newArr;
     }
+
+
+    /**
+     * 
+     * 返回指定区间内的随机数
+     * 
+     * @since 0.2
+     * @param {Number} min 区间最小值
+     * @param {Number} max 区间最大值
+     * @returns {Number}
+     * @author Roger Shen
+     * 
+     */
+    _.random = function (min, max) {
+        if(max == null) {
+            return Math.floor(Math.random() * min);
+        } else {
+            return Math.floor(Math.random() * (max - min) + min);
+        }
+    };
 
     
     /**
@@ -863,9 +910,62 @@
     };
 
 
-    // TODO:
     _.isArray = function (array) {
+        return Object.prototype.toString.call(array) === "[object Array]";
+    };
 
+    _.isObject = function (obj) {
+        return Object.prototype.toString.call(obj) === "[object Object]";
+    };
+
+    _.isFunction = function (func) {
+        return Object.prototype.toString.call(func) === "[object Function]";
+    };
+
+    _.isNumber = function (num) {
+        return Object.prototype.toString.call(num) === "[object Number]";
+    };
+
+    _.isBoolean = function (bool) {
+        return Object.prototype.toString.call(bool) === "[object Boolean]";
+    };
+
+    _.isString = function (str) {
+        return Object.prototype.toString.call(str) === "[object String]";
+    };
+
+    _.isNaN = function (nan) {};
+
+    _.isNull = function (nil) {
+        return Object.prototype.toString.call(nil) === "[object Null]";
+    };
+
+    _.isUndefined = function (udf) {
+        return Object.prototype.toString.call(udf) === "[object Undefined]";
+    }
+
+    _.isSet = function (set) {
+        return Object.prototype.toString.call(set) === "[object Set]";
+    };
+
+    _.isMap = function (map) {
+        return Object.prototype.toString.call(map) === "[object Map]"
+    };
+
+    _.isDate = function (date) {
+        return Object.prototype.toString.call(date) === "[object Date]";
+    };
+
+    _.isRegExp = function (re) {
+        return Object.prototype.toString.call(re) === "[object RegExp]";
+    }
+
+    _.isWeakMap = function (weakMap) {
+        return Object.prototype.toString.call(weakMap) === "[object WeakMap]";
+    };
+
+    _.isWeakSet = function (weakSet) {
+        return Object.prototype.toString.call(weakSet) === "[object WeakSet]";
     };
 
 
@@ -877,6 +977,7 @@
      * @param {Boolean} bool 布尔值
      * @returns {BOolean} 返回布尔值
      * @author Roger Shen
+     * 
      */
     _.isBoolean = function (bool) {
         if(bool === true || bool === false){
