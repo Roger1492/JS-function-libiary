@@ -14,7 +14,7 @@
 
     /**
      * 
-     * 把多个数组列表中相同的元素筛选出来组成一个新数组
+     * 把多个数组列表中共同拥有的元素筛选出来组成一个新数组
      * 
      * @since 0.1.0
      * @param {*Array} array 
@@ -25,12 +25,9 @@
     // TODO: 
     _.intersection = function (...array) {
         let newArr = [];
-        for(let i = 0; i < array.length; i++){
-            array[i].forEach((element,index,array) => {
-                array[i+1].includes(element);
-                newArr.push(element);
-            })
-        }
+        
+        
+
         return newArr;
     }
 
@@ -52,31 +49,40 @@
 
     /**
      * 
-     * 返回两个数组中不同的元素
+     * 从array数组返回other数组中没有的值
      * 
      * @since 0.1.0
      * @param {Array} array
      * @param {Array} other
      * @returns {Array}
      * @author Roger Shen
+     * 
      */
-    // TODO:
     _.difference = function (array, other) {
         let newArr = [];
-        for(let i = 0; i < array.length; i++){
-            array.forEach((ele, ind, arr) => {
-                if(other.includes(ele)){
-                    newArr.push(ele);
-                }
-            })
-        }
+        
+        array.forEach((ele, ind, arr) => {
+            if(!other.includes(ele)){
+                newArr.push(ele);
+            }
+        })
+        // other.forEach((ele,ind,arr) => {
+        //     if(!array.includes(ele)){
+        //         newArr.push(ele);
+        //     }
+        // })
         return newArr;
     };
 
 
     // TODO: 
-    _.shuffle = function () {
-
+    _.shuffle = function (array) {
+        for(let i = 0; i < array.length*2; i++){
+            let rd1 = Math.floor(Math.random() * array.length);
+            let rd2 = array.length-rd1-1;
+            _.replace(array[rd1], array[rd2]);
+        }
+        return array;
     };
 
 
@@ -161,12 +167,15 @@
 
     // TODO: 
     _.without = function (arrayList,...arg) {
-        for(let i = 0; i < arg.length; i++){
+        // let newArr = [];
+
+        for(let i = 0; i < arg.leng; i++){
             if(arrayList.includes(arg[i])){
-                _.remove(arrayList, arg[i]);
+                _.remove(arrayList, args[i]);
             }
         }
-        return arrayList;
+
+        // return newArr;
     };
 
 
@@ -285,13 +294,61 @@
     };
 
 
-    // TODO: 未完成
-    _.pull = function () {};
+    /**
+     * 
+     * 删除数组中所有给定的值
+     * 
+     * @since 0.1.0
+     * @param {Array} arrayList 原始数组
+     * @param  {...any} value 要删除的数组中的内容
+     * @author Roger Shen
+     * 
+     * @example 
+     * 
+     * _.pull(["one","two","three","one","two","three","one"], "one")
+     * // => ["two", "three", "two", "three"]
+     * 
+     */
+    _.pull = function (arrayList, ...value) {
+        for(let i = 0; i < value.length; i++){
+            for(let j = 0; j < arrayList.length; j++){
+                if(_.contains(arrayList,value[i])){
+                    _.remove(arrayList, value[i])
+                }
+            }
+        }
+        return arrayList;
+    };
 
 
-    // TODO: 未完成
+    /**
+     * 
+     * 把数组转化为带分隔符的字符串
+     * 
+     * @since 0.1.0
+     * @param {Array} array 
+     * @param {*} separator 分隔符
+     * @author Roger Shen
+     * 
+     * @example 
+     * _.join(["a","B","c","D","e","F"])
+     * // => "a,B,c,D,e,F"
+     * 
+     * _.join([1,2,3,4,5],"*")
+     * // => "1*2*3*4*5"
+     * 
+     */
     _.join = function (array, separator){
-
+        let str = '';
+        if(separator == null){
+            str = array.toString();
+        } else {
+            for(let i = 0; i < array.length; i++){
+                str += array[i] + separator;
+            }
+            str = str.slice(0, str.length - separator.length);
+        }
+        return str;
     };
 
 
@@ -320,9 +377,29 @@
     };
 
 
-    // TODO: 未完成
+    /**
+     * @since 0.1.0
+     * @param  {...any} arr 数组列表
+     * @returns {...Array}
+     * @author Roger Shen
+     * 
+     * @example 
+     * 
+     * _.zip(["Roger","Lewis", "Jim"],[22,28,32],[8000,9000,7000])
+     * // => [ [ 'Roger', 22, 8000 ],[ 'Lewis', 28, 9000 ],[ 'Jim', 32, 7000 ] ]
+     * 
+     */
     _.zip = function (...arr) {
-        
+        let newArr = [];
+        let argLen = arguments[0].length;
+        for(let i = 0; i < argLen; i++){
+            let nr = [];
+            newArr.push(nr);
+            for(j = 0; j < arr.length; j++){
+                nr.push(arr[j][i]);
+            }
+        }
+        return newArr;
     };
 
 
@@ -793,6 +870,22 @@
 
 
     /**
+     * 
+     * 互换前后两个值
+     * 
+     * @since 0.1.0
+     * @param {*} value1 第一个值
+     * @param {*} value2 第二个值
+     * @returns {*}
+     * @author Roger Shen
+     */
+    _.replace = function (value1, value2) {
+        return [value1,value2] = [value2,value1];
+        
+    }
+
+
+    /**
      * 返回一个当前时间的整数时间戳
      * @since 0.1.0
      * @returns {Number}
@@ -811,18 +904,23 @@
      * @since 0.1.0
      * @param {Object} obj 
      * @returns {Array}
+     * @author Roger Shen
+     * 
+     * @example
+     * 
+     * _.pairs({a:"123",b:"456",c:"789",d:"101112",e:"131415",f:"161718"})
+     * // => [ [ 'a', '123' ],[ 'b', '456' ],[ 'c', '789' ],[ 'd', '101112' ],[ 'e', '131415' ],[ 'f', '161718' ] ]
      * 
      */
-    // TODO:
     _.pairs = function (obj) {
         let newArr = [];
         let keys = Object.keys(obj);
         let values = Object.values(obj);
         for(let i = 0; i < keys.length; i++){
             let nr = [];
-            newArr.push(nr);
             nr.push(keys[i]);
             nr.push(values[i]);
+            newArr.push(nr);
         }
         return newArr;
     }
