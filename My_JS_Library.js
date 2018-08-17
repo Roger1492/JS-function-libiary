@@ -11,6 +11,8 @@
     ///////// Array 方法 ////////
     ////////////////////////////
 
+    _.version = "0.1.0";
+
 
     /**
      * 
@@ -24,11 +26,12 @@
      */
     // TODO: 
     _.intersection = function (...array) {
-        let newArr = [];
         
-        
+        // for(let i = 0; i < array.length; i++){
+        //     [].concat(array[i]);
+        // }
 
-        return newArr;
+        return arguments.length;
     }
 
 
@@ -77,11 +80,10 @@
 
     // TODO: 
     _.shuffle = function (array) {
-        for(let i = 0; i < array.length*2; i++){
-            let rd1 = Math.floor(Math.random() * array.length);
-            let rd2 = array.length-rd1-1;
-            _.replace(array[rd1], array[rd2]);
-        }
+        // for(let i = 0; i < array.length*2; i++){
+        //     let rd1 = Math.floor(Math.random() * array.length);
+        //     let rd2 = array.length-rd1-1;
+        // }
         return array;
     };
 
@@ -474,13 +476,13 @@
      */
     _.compact = function (array) {
         let newArr = [];
-        if(array == null){ return; }
 
-        array.forEach((ele,ind,arr) => {
-            if(ele){
+        array.forEach((ele, ind, arr) => {
+            if(Boolean(ele) == true){
                 newArr.push(ele);
             }
         })
+
         return newArr;
     };
 
@@ -510,6 +512,26 @@
             return allNames;
         }, {})
     };
+
+
+    /**
+     * 
+     * 把字符串重复指定的次数
+     * 
+     * @since 0.1.0
+     * @param {String} context 要重复的String
+     * @param {*} n 要重复的次数
+     * @returns {String}
+     * @author Roger Shen
+     * 
+     */
+    _.repeat = function (context, n=1) {
+        let str = '';
+        for(let i = 0; i < n; i++){
+            str += context;
+        }
+        return str;
+    }
 
     
     /**
@@ -871,6 +893,36 @@
 
     /**
      * 
+     * 以数组的形式返回对象的keys
+     * 
+     * @since 0.1.0
+     * @param {Object} obj 对象
+     * @returns {Array}
+     * @author Roger Shen
+     * 
+     */
+    _.keys = function (obj) {
+        return Object.keys(obj);
+    };
+
+
+    /**
+     * 
+     * 以数组的形式返回对象的values
+     * 
+     * @since 0.1.0
+     * @param {Object} obj 对象
+     * @returns {Array}
+     * @author Roger Shen
+     * 
+     */
+    _.values = function (obj) {
+        return Object.values(obj);
+    };
+
+
+    /**
+     * 
      * 互换前后两个值
      * 
      * @since 0.1.0
@@ -879,9 +931,43 @@
      * @returns {*}
      * @author Roger Shen
      */
-    _.replace = function (value1, value2) {
+    _.exchange = function (value1, value2) {
         return [value1,value2] = [value2,value1];
-        
+    }
+
+
+    /**
+     * 
+     * 交换数组中的两个值的位置
+     * 
+     * @since 0.1.0
+     * @param {Array} arrayList 原始数组
+     * @param {*} v1 要交换的值 v1
+     * @param {*} v2 要交换的值 v2
+     * @returns {Array}
+     * @author Roger Shen
+     */
+    // TODO: 
+    _.replaceValue = function (arrayList, v1, v2) {
+
+    };
+
+
+    /**
+     * 
+     * 交换数组中的两个索引位置的值
+     * 
+     * @since 0.2
+     * @param {*} arrayList 
+     * @param {*} index1 要交换的数组索引 index1
+     * @param {*} index2 要交换的数组索引 index2
+     * @returns {Array}
+     * @author Roger Shen
+     * 
+     */
+    _.replaceIndex = function (arrayList, index1, index2) {
+        [arrayList[index1],arrayList[index2]] = [arrayList[index2], arrayList[index1]];
+        return arrayList;
     }
 
 
