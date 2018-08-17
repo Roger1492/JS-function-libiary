@@ -11,6 +11,7 @@
     ///////// Array 方法 ////////
     ////////////////////////////
 
+
     _.version = "0.1.0";
 
 
@@ -547,7 +548,7 @@
      * _.flat([["a","b"],[1,2],["n","y"],[5,"h"]])
      * // => (8) ["a", "b", 1, 2, "n", "y", 5, "h"]
      */
-    _.flat = function (array) {
+    _.flatten = function (array) {
         return array.reduce((a, b) => a.concat(b));
     };
 
@@ -637,7 +638,7 @@
      * @returns {Number} 返回数组中所有元素之乘积
      * @author Roger Shen
      */
-    _.times = function (array) {
+    _.product = function (array) {
         let newArr = [];
         array.forEach((ele, ind, arr) => {
             let newE = parseInt(ele);
@@ -721,7 +722,7 @@
 
     /**
      * @since 0.1.0
-     * @param {None}
+     * @param {Number} 以什么类型输出 - 16进制，rgba
      * @returns {String} the value of the color with hex;
      * @author Roger Shen
      * 
@@ -729,7 +730,8 @@
      * _.randomColor()
      * // => #dc8ccb
      */
-    _.randomColor = function(){
+    // TODO: 
+    _.randomColor = function(tppe){
         return "#" + Math.floor(Math.random()* (1 << 24)).toString(16);
     };
 
@@ -762,10 +764,30 @@
     };
 
 
+    /**
+     * 
+     * 返回指定区间内的随机数
+     * 
+     * @since 0.2
+     * @param {Number} min 区间最小值
+     * @param {Number} max 区间最大值
+     * @returns {Number}
+     * @author Roger Shen
+     * 
+     */
+    _.random = function (min, max) {
+        if(max == null) {
+            return Math.floor(Math.random() * min);
+        } else {
+            return Math.floor(Math.random() * (max - min) + min);
+        }
+    };
+
+
     ///////////////////////////////
     ////////   Math 方法  /////////
     //////////////////////////////
-
+    
 
     /**
      * 
@@ -789,6 +811,7 @@
     _.divide = function (devidend, divisor) {
         return devidend / divisor;
     };
+
 
     /**
      * 
@@ -887,8 +910,39 @@
 
 
     ////////////////////////////////
-    /////////  Lang     
+    //////////  Lang    ////////////
     ////////////////////////////////
+
+
+    /**
+     * 
+     * 删除String的所有空字符
+     * 
+     * @since 0.1.0
+     * @param {String} string 
+     * @returns {String}
+     * @author Roger Shen
+     * 
+     */
+    _.trimAll = function (string) {
+        return string.replace(/\s/g, '');125.
+    };
+
+
+    /**
+     * 
+     * 删除String两边的空字符
+     * 
+     * @since 0.1.0
+     * @param {String} string 
+     * @returns {String}
+     * @author Roger Shen
+     * 
+     */
+    // TODO:
+    _.trim = function (string) {
+        return string.replace(/\s/g, '');
+    };
 
 
     /**
@@ -930,6 +984,7 @@
      * @param {*} value2 第二个值
      * @returns {*}
      * @author Roger Shen
+     * 
      */
     _.exchange = function (value1, value2) {
         return [value1,value2] = [value2,value1];
@@ -946,6 +1001,7 @@
      * @param {*} v2 要交换的值 v2
      * @returns {Array}
      * @author Roger Shen
+     * 
      */
     // TODO: 
     _.replaceValue = function (arrayList, v1, v2) {
@@ -1010,26 +1066,6 @@
         }
         return newArr;
     }
-
-
-    /**
-     * 
-     * 返回指定区间内的随机数
-     * 
-     * @since 0.2
-     * @param {Number} min 区间最小值
-     * @param {Number} max 区间最大值
-     * @returns {Number}
-     * @author Roger Shen
-     * 
-     */
-    _.random = function (min, max) {
-        if(max == null) {
-            return Math.floor(Math.random() * min);
-        } else {
-            return Math.floor(Math.random() * (max - min) + min);
-        }
-    };
 
     
     /**
@@ -1102,7 +1138,7 @@
         return Object.prototype.toString.call(obj) === "[object Object]";
     };
 
-    _.isFunction = function (func) {
+    _.isFunction = function (f) {
         return Object.prototype.toString.call(func) === "[object Function]";
     };
 
@@ -1152,26 +1188,4 @@
         return Object.prototype.toString.call(weakSet) === "[object WeakSet]";
     };
 
-
-    /**
-     * 
-     * 判断布尔值
-     * 
-     * @since 0.1.0
-     * @param {Boolean} bool 布尔值
-     * @returns {BOolean} 返回布尔值
-     * @author Roger Shen
-     * 
-     */
-    _.isBoolean = function (bool) {
-        if(bool === true || bool === false){
-            return true;
-        }
-        if(Boolean(bool)){
-            return false;
-        }
-        if(bool === null){
-            return false;
-        }
-    };
 })()
