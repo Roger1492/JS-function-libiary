@@ -722,17 +722,39 @@
 
     /**
      * @since 0.1.0
-     * @param {Number} 以什么类型输出 - 16进制，rgba
+     * @param {Number} 以什么类型输出 - hex，rgba, hsla
      * @returns {String} the value of the color with hex;
      * @author Roger Shen
      * 
      * @example 
-     * _.randomColor()
+     * _.randomColor('hex')
      * // => #dc8ccb
+     * 
+     * _.randomColor('rgba')
+     * // => rgba(58, 60, 185, 0.4)
+     * 
+     * _.randomColor('hsla')
+     * // => hsla(134,9%,13%,0.2)
+     * 
      */
-    // TODO: 
-    _.randomColor = function(tppe){
-        return "#" + Math.floor(Math.random()* (1 << 24)).toString(16);
+    _.randomColor = function(type){
+        if(type == 'hex'){
+            return "#" + Math.floor(Math.random()* (1 << 24)).toString(16);
+        }
+        if(type == 'rgba'){
+            let r = Math.floor(Math.random()*256);
+            let g = Math.floor(Math.random()*256);
+            let b = Math.floor(Math.random()*256);
+            let a = Math.floor(Math.random()*10)/10;
+            return 'rgba('+r+','+g+','+b+','+a+')';
+        }
+        if(type == 'hsla'){
+            let h = Math.floor(Math.random()*360);
+            let s = Math.floor(Math.random()*100) + "%";
+            let l = Math.floor(Math.random()*100) + "%";
+            let a = Math.floor(Math.random()*10)/10;
+            return 'hsla('+h+','+s+','+l+','+a+')';
+        }
     };
 
 

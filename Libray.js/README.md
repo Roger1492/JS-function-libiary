@@ -20,7 +20,7 @@
 > _.join(array, separator)  
 > _.size(n)  
 > _.zip(...arr)  
-> _.drop(array, n=1)  
+> _.drop(array, n=1)   
 > _.dropRight(array, n=1)  
 > _.compact(array)  
 > _.repeatCount(array)  
