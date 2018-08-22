@@ -47,7 +47,13 @@
      * @author Roger Shen
      */
     _.indexOf = function (arrayList, value){
-        return arrayList.indexOf(value);
+        let index;
+        arrayList.forEach((ele,ind,arr) => {
+            if(ele == value){
+                index = ind;
+            }
+        })
+        return index;
     }
 
 
@@ -70,21 +76,26 @@
                 newArr.push(ele);
             }
         })
-        // other.forEach((ele,ind,arr) => {
-        //     if(!array.includes(ele)){
-        //         newArr.push(ele);
-        //     }
-        // })
         return newArr;
     };
 
 
-    // TODO: 
+    /**
+     * 
+     * 返回打乱顺序后的新数组
+     * 
+     * @since 0.1.0
+     * @param {*} array
+     * @returns {*} array
+     * @author Roger Shen
+     * 
+     */
     _.shuffle = function (array) {
-        // for(let i = 0; i < array.length*2; i++){
-        //     let rd1 = Math.floor(Math.random() * array.length);
-        //     let rd2 = array.length-rd1-1;
-        // }
+        for(let i = 0; i < array.length*10; i++){
+            let rd1 = Math.floor(Math.random() * array.length);
+            let rd2 = array.length-rd1-1;
+            _.replaceIndex(array, rd1, rd2);
+        }
         return array;
     };
 
@@ -94,7 +105,7 @@
      * 返回数组中去除重复值后的新数组
      * 
      * @since 0.1.0
-     * @param {Array} array 
+     * @param {Array} array
      * @returns {Array}
      * @author Roger Shen
      * 
@@ -168,17 +179,20 @@
     };
 
 
-    // TODO: 
+    /**
+     * 
+     * 返回删除指定元素后的新数组
+     * 
+     * @since 0.1.0
+     * @param {arrayList} arrayList
+     * @param {*arg} 要删除的元素
+     * @author Roger Shen
+     * 
+     */
     _.without = function (arrayList,...arg) {
-        // let newArr = [];
-
-        for(let i = 0; i < arg.leng; i++){
-            if(arrayList.includes(arg[i])){
-                _.remove(arrayList, args[i]);
-            }
+        for(let i = 0; i < arg.length; i++){
+            _.remove(arrayList, arg[i]);
         }
-
-        // return newArr;
     };
 
 
@@ -938,7 +952,7 @@
 
     /**
      * 
-     * 删除String的所有空字符
+     * 删除String的所有空白字符
      * 
      * @since 0.1.0
      * @param {String} string 
@@ -947,13 +961,13 @@
      * 
      */
     _.trimAll = function (string) {
-        return string.replace(/\s/g, '');125.
+        return string.replace(/\s/g, '');
     };
 
 
     /**
      * 
-     * 删除String两边的空字符
+     * 删除String两边的空白字符
      * 
      * @since 0.1.0
      * @param {String} string 
@@ -961,9 +975,8 @@
      * @author Roger Shen
      * 
      */
-    // TODO:
     _.trim = function (string) {
-        return string.replace(/\s/g, '');
+        return string.replace(/(^\s*)|(\s*$)/g, '');
     };
 
 
@@ -1015,7 +1028,7 @@
 
     /**
      * 
-     * 交换数组中的两个值的位置
+     * 直接通过值交换数组中的两个值
      * 
      * @since 0.1.0
      * @param {Array} arrayList 原始数组
@@ -1025,15 +1038,17 @@
      * @author Roger Shen
      * 
      */
-    // TODO: 
     _.replaceValue = function (arrayList, v1, v2) {
-
+        let index1 = arrayList.indexOf(v1);
+        let index2 = arrayList.indexOf(v2);
+        [arrayList[index1],arrayList[index2]] = [arrayList[index2], arrayList[index1]];
+        return arrayList;
     };
 
 
     /**
      * 
-     * 交换数组中的两个索引位置的值
+     * 通过索引交换数组中的两个值
      * 
      * @since 0.2
      * @param {*} arrayList 

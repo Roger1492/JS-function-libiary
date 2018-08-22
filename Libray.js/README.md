@@ -36,7 +36,7 @@
 
 ### Random
 
-> _.randomColor(type)  // TODO:
+> _.randomColor(type)  
 > _.randomIP(n)  
 > _.random(min, max)  
 
