@@ -54,6 +54,8 @@
 
 ### Lang
 
+> _.negation(num)  
+> _.addDigits(num)  
 > _.trimAll(String)  
 > _.trim(String)  
 > _.keys(obj)  

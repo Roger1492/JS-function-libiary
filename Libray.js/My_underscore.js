@@ -26,14 +26,7 @@
      * 
      */
     // TODO: 
-    _.intersection = function (...array) {
-        
-        // for(let i = 0; i < array.length; i++){
-        //     [].concat(array[i]);
-        // }
-
-        return arguments.length;
-    }
+    _.intersection = function (...array) { }
 
 
     /**
@@ -165,17 +158,20 @@
      * 
      * 删除数组中指定元素
      * 
-     * @since 0.1.0
+     * @since 0.1.1
      * @param {Array} arrayList 原始数组
      * @param {*} rm 要删除的数组元素
      * @author Roger Shen
      * 
      */
-    _.remove = function (arrayList, rm) {
-        var index = arrayList.indexOf(rm);
-        if(index > -1){
-            arrayList.splice(index, 1);
+    _.remove = function (arrayList, val) {
+        for(let i = 0; i < arrayList.length; i++){
+            let index = arrayList.indexOf(val);
+            if(index > -1){
+                arrayList.splice(index, 1);
+            }
         }
+        return arrayList;
     };
 
 
@@ -183,7 +179,7 @@
      * 
      * 返回删除指定元素后的新数组
      * 
-     * @since 0.1.0
+     * @since 0.1.1
      * @param {arrayList} arrayList
      * @param {*arg} 要删除的元素
      * @author Roger Shen
@@ -193,6 +189,7 @@
         for(let i = 0; i < arg.length; i++){
             _.remove(arrayList, arg[i]);
         }
+        return arrayList;
     };
 
 
@@ -671,7 +668,32 @@
      * @author Roger Shen
      */
     _.deleteRepeats = function (array) {
+
+        // 第一种去重方法：用Set的唯一性来去重
         return Array.from(new Set(array));
+
+        // 第二种去重方法：兼容性最好的，也是最传统的方法
+        // let res = [];
+        // for(var i = 0; i < array.length; i++){
+        //     for(var j = 0; j < res.length; j++){
+        //         if(array[i] === res[j]){
+        //             break;
+        //         }
+        //     }
+        //     if(j === res.length){
+        //         res.push(array[i]);
+        //     }
+        // }
+        // return res;
+
+        // 第三种去重方法：indexOf查看元素是否存在
+        // let res = [];
+        // for(let i = 0; i < array.length; i++){
+        //     if(res.indexOf(array[i]) === -1){
+        //         res.push(array[i])
+        //     }
+        // }
+        // return res;
     };
 
 
@@ -952,6 +974,57 @@
 
     /**
      * 
+     * 二进制取反
+     * 
+     * @since 0.1.0
+     * @param {Number} num 
+     * @returns {Number}
+     * @author Roger Shen
+     * 
+     */
+    _.negation = function (num) {
+        let f = '';
+        for(let i = 0; i < num.length; i++){
+            if(num[i] == "1"){
+                f += num[i].replace("1","0")
+            } else {
+                f += num[i].replace("0","1");
+            }
+        }
+        return f;
+    }
+
+
+    /**
+     * 
+     * 各项数相加
+     * 
+     * @since 0.1.0
+     * @param {Number} num 
+     * @returns {Number}
+     * @author Roger Shen
+     * 
+     * @example 
+     * _.addDigits(789)
+     * // => 7+8+9=24  => 2+4=6
+     * 
+     */
+    _.addDigits = function (num) {
+        let arr = [];
+        let sNum = String(num);
+        for(let i = 0; i< sNum.length; i++){
+            arr.push(Number.parseInt(sNum[i]));
+        }
+        if(arr.length > 1){
+            return _.addDigits(arr.reduce((a,b) => a+b));
+        } else {
+            return arr[0];
+        }
+    };
+
+
+    /**
+     * 
      * 删除String的所有空白字符
      * 
      * @since 0.1.0
@@ -1164,6 +1237,18 @@
      */
     _.lte = function (v, o) {
         return v <= o ? "true" : "false";
+    };
+
+    _.type = function (t) {
+        let type2class = {};
+        "Boolean Number String Function Array Date RegExp Object Error".split(" ").map((item, index) => {
+            type2class["object " + item + "]"] = item.toLowerCase();
+        })
+        if(t == null){
+            return t + "";
+        }
+        return typeof t == "object" || t == "function" ?
+            type2class[Object.prototype.toString.call(t)] || "object" : typeof t;
     };
 
 
