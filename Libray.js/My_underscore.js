@@ -974,6 +974,28 @@
 
     /**
      * 
+     * 实现对象的深拷贝
+     * 
+     * @since 0.1.0
+     * @param {Object} obj 
+     * @returns {Object}
+     * @author Roger Shen
+     * 
+     */
+    _.deepCopy = function (obj) {
+        if (typeof obj !== "object") return;
+        let newObj = obj instanceof Array ? [] : {};
+        for(var key in obj){
+            if(obj.hasOwnProperty(key)){
+                newObj[key] = typeof obj[key] === "object" ? this.deepCopy(obj[key]) : obj[key];
+            }
+        }
+        return newObj;
+    };
+
+
+    /**
+     * 
      * 二进制取反
      * 
      * @since 0.1.0
