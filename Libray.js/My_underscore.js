@@ -560,7 +560,14 @@
      * // => (8) ["a", "b", 1, 2, "n", "y", 5, "h"]
      */
     _.flatten = function (array) {
-        return array.reduce((a, b) => a.concat(b));
+        // 这个方法只能复制一层
+        // return array.reduce((a, b) => a.concat(b));
+
+        while (array.some(item => Array.isArray(item))) {
+            array = [].concat(...array);
+        }
+    
+        return array;
     };
 
     /**
@@ -579,7 +586,7 @@
      * 
      */
 
-    _.first = function (array) {
+    _.first = _.head = function (array) {
         return (array != null && array.length) ? array[0] : undefined;
     };
 
@@ -599,7 +606,7 @@
      * // => 'Jack'
      * 
      */
-    _.last = function (array) {
+    _.last = _.tail = function (array) {
         return (array !== null && array.length) ? array[array.length - 1] : undefined;
     };
 
@@ -635,27 +642,6 @@
             }
         }
         return newArr;
-    };
-
-
-    /**
-     * 
-     * 返回数组所有元素之积
-     * 
-     * @description 实现的原理和上面的 sum 方法相同。
-     * 
-     * @since 0.1.0
-     * @param {*} array 
-     * @returns {Number} 返回数组中所有元素之乘积
-     * @author Roger Shen
-     */
-    _.product = function (array) {
-        let newArr = [];
-        array.forEach((ele, ind, arr) => {
-            let newE = parseInt(ele);
-            newE / newE === 1 ? newArr.push(newE) : '';
-        })
-        return newArr.reduce((a, b) => a * b);
     };
 
 
@@ -712,8 +698,8 @@
      * 
      */
     _.choice = function (array) {
-        let l = array.length;
-        let rnd = Math.floor(Math.random() * l);
+        let len = array.length;
+        let rnd = Math.floor(Math.random() * len);
         return array[rnd];
     };
 
@@ -747,6 +733,7 @@
         for (let i = start; i < stop; i += step) {
             arr.push(i);
         }
+
         return arr;
     };
 
@@ -774,22 +761,22 @@
      * 
      */
     _.randomColor = function(type){
-        if(type == 'hex'){
+        if (type == 'hex'){
             return "#" + Math.floor(Math.random()* (1 << 24)).toString(16);
-        }
-        if(type == 'rgba'){
+        } else if (type == 'rgba'){
             let r = Math.floor(Math.random()*256);
             let g = Math.floor(Math.random()*256);
             let b = Math.floor(Math.random()*256);
             let a = Math.floor(Math.random()*10)/10;
             return 'rgba('+r+','+g+','+b+','+a+')';
-        }
-        if(type == 'hsla'){
+        } else if (type == 'hsla'){
             let h = Math.floor(Math.random()*360);
             let s = Math.floor(Math.random()*100) + "%";
             let l = Math.floor(Math.random()*100) + "%";
             let a = Math.floor(Math.random()*10)/10;
             return 'hsla('+h+','+s+','+l+','+a+')';
+        } else {
+            return "Sorry, please enter rightful type";
         }
     };
 
@@ -833,6 +820,7 @@
      * @author Roger Shen
      * 
      */
+    // TODO: 可以根据是否包含前后区间，分为多个类型
     _.random = function (min, max) {
         if(max == null) {
             return Math.floor(Math.random() * min);
@@ -873,29 +861,53 @@
 
     /**
      * 
-     * 返回数组中最小的数
+     * 返回数组中最小的数字
      * 
      * @since 0.1.0
      * @param {Array} array 
      * @returns {Number}
      * @author Roger Shen
      */
-    _.min = function (array) {
+    _.min = _.smallest = function (array) {
         return array.sort((a, b) => (a - b))[0];
     };
 
 
     /**
      * 
-     * 返回数组中最大的数
+     * 返回数组中最大的数字
      * 
-     * @since 0.1.0
+     * @since 0.1.1
      * @param {Array} array 
      * @returns {Number}  
      * @author Roger Shen
+     * 
      */
-    _.max = function (array) {
-        return array.sort((a, b) => (b - a))[0];
+    _.max = _.biggest = function (array) {
+        // 先把所有的非数字转化为数字
+        let newArr = [];
+        for(let i = 0; i < array.length; i++){
+            newArr.push(parseInt(array[i]));
+        }
+
+        // 第一种方法： 用数组的sort方法倒序排序后选第一个元素
+        return newArr.sort((a, b) => (b - a))[0];
+
+        // 第二种方法： 最原始的方法
+        // var result = newArr[0];
+        // for(let i = 0; i < newArr.length; i++){
+        //     result = Math.max(result, newArr[i])
+        // }
+        // return result;
+
+        // 第三种方法： 用reduce方法
+        // return newArr.reduce((a, b) => Math.max(a, b));
+
+        // 第四种方法： apply方法
+        // return Math.max.apply(null, newArr);
+
+        // 第五种方法： ES6方法
+        // return Math.max(...newArr);
     };
 
 
@@ -910,10 +922,10 @@
      * 
      * @example
      * 
-     * _.fac(6);
+     * _.factorial(6);
      * // => 720
      */
-    _.fac = function (num) {
+    _.factorial = function (num) {
         return (num === 0 || num === 1) ? 1 : num * arguments.callee(num - 1);
     };
 
@@ -926,8 +938,9 @@
      * @param {Number} len 要生成的斐波那契数列的长度
      * @returns {Array}
      * @author Roger Shen
+     * 
      */
-    _.fib = function (len) {
+    _.fibonacci = function (len) {
         let a = 0,
             b = 1,
             arr = [0, 1];
@@ -967,9 +980,44 @@
     };
 
 
+    /**
+     * 
+     * 返回数组所有元素之积
+     * 
+     * @description 实现的原理和上面的 sum 方法相同。
+     * 
+     * @since 0.1.0
+     * @param {*} array 
+     * @returns {Number} 返回数组中所有元素之乘积
+     * @author Roger Shen
+     */
+    _.product = function (array) {
+        let newArr = [];
+        array.forEach((ele, ind, arr) => {
+            let newE = parseInt(ele);
+            newE / newE === 1 ? newArr.push(newE) : '';
+        })
+        return newArr.reduce((a, b) => a * b);
+    };
+
+
     ////////////////////////////////
     //////////  Lang    ////////////
     ////////////////////////////////
+
+
+    _.shadowCopy = function (obj) {
+        if(typeof obj !== "object") return;
+
+        let newOA = obj instanceof Array ? [] : {};
+        
+        for(var key in obj) {
+            if(obj.hasOwnProperty(key)) {
+                newOA[key] = obj[key];
+            }
+        }
+        return newOA;
+    }
 
 
     /**
@@ -984,12 +1032,15 @@
      */
     _.deepCopy = function (obj) {
         if (typeof obj !== "object") return;
+
         let newObj = obj instanceof Array ? [] : {};
+
         for(var key in obj){
-            if(obj.hasOwnProperty(key)){
+            if(obj.hasOwnProperty(key)) {
                 newObj[key] = typeof obj[key] === "object" ? this.deepCopy(obj[key]) : obj[key];
             }
         }
+
         return newObj;
     };
 
