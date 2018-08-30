@@ -17,6 +17,28 @@
 
     /**
      * 
+     * 判断一个数组中是否包含一个指定的值
+     * 
+     * @since 0.1.0
+     * @param {Array} arrayList 数组列表
+     * @param {*} searchElement 要查找的元素
+     * @param {*} fromIndex 从该索引处开始找
+     * @returns {Boolean} 如果存在返回true，不存在返回false
+     * @author Roger Shen
+     * 
+     */
+    _.exist = _.has = function (arrayList, searchElement, fromIndex=0) {
+        let nArr = arrayList.slice(fromIndex, arrayList.length);
+        if(nArr.indexOf(searchElement) !== -1){
+            return true;
+        } else {
+            return false;
+        }
+    };
+
+
+    /**
+     * 
      * 把多个数组列表中共同拥有的元素筛选出来组成一个新数组
      * 
      * @since 0.1.0
