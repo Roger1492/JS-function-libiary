@@ -841,15 +841,25 @@
      * @returns {Number}
      * @author Roger Shen
      * 
+     * @description
+     * 
+     * "front" 前开区间 —— 包含前数，不包含后数
+     * "back" 后开区间 —— 不包含前数，包含后数
+     * "all" 前后都开区间 —— 前后数都包含
+     * "none" 前后都闭区间 —— 前后数都不包含
+     * 
      */
-    // TODO: 可以根据是否包含前后区间，分为多个类型
-    _.random = function (min, max) {
-        if(max == null) {
-            return Math.floor(Math.random() * min);
-        } else {
-            return Math.floor(Math.random() * (max - min) + min);
+    _.random = function (min, max=0, predicate) {
+        if(predicate === "front"){
+            return Math.floor(Math.random() * min + (max - min));
+        } else if(predicate === "back"){
+            return Math.floor(Math.random() * min + (max - min + 1));
+        } else if(predicate === "all"){
+            return Math.floor(Math.random() * (min + 1) + (max - min));
+        } else if(predicate === "none"){
+            return Math.floor(Math.random() * (min -1 ) + (max - min + 1));
         }
-    };
+    }
 
 
     ///////////////////////////////
