@@ -895,6 +895,8 @@
      * 
      * 返回数组中最小的数字
      * 
+     * @description 与返回最大值的原理是一样的
+     * 
      * @since 0.1.0
      * @param {Array} array 
      * @returns {Number}
@@ -923,7 +925,7 @@
         }
 
         // 第一种方法： 用数组的sort方法倒序排序后选第一个元素
-        return newArr.sort((a, b) => (b - a))[0];
+        // return newArr.sort((a, b) => (b - a))[0];
 
         // 第二种方法： 最原始的方法
         // var result = newArr[0];
@@ -936,7 +938,7 @@
         // return newArr.reduce((a, b) => Math.max(a, b));
 
         // 第四种方法： apply方法
-        // return Math.max.apply(null, newArr);
+        return Math.max.apply(null, newArr);
 
         // 第五种方法： ES6方法
         // return Math.max(...newArr);
