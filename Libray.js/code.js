@@ -1039,6 +1039,23 @@
     //////////  Lang    ////////////
     ////////////////////////////////
 
+    
+
+    /**
+     * 
+     * 判断属性是否为原型属性
+     * 
+     * @description 如果 name 是 obj 的原型属性，则返回 true，否则返回 false。
+     * 
+     * @since 0.1.1
+     * @param {Object} obj 实例对象
+     * @param {property}} name 实例对象的属性
+     * @author Roger Shen
+     */
+    _.hasPrototypeProperty = function(obj, name){
+        return !obj.hasOwnProperty(name) && (name in obj);
+    }
+
 
     _.shadowCopy = function (obj) {
         if(typeof obj !== "object") return;
@@ -1171,7 +1188,12 @@
      * 
      */
     _.keys = function (obj) {
-        return Object.keys(obj);
+        // return Object.keys(obj);
+        var arr = [];
+        for(let s in obj){
+            arr.push(s);
+        }
+        return arr;
     };
 
 
@@ -1186,7 +1208,12 @@
      * 
      */
     _.values = function (obj) {
-        return Object.values(obj);
+        // return Object.values(obj);
+        let arr = [];
+        for(let s in obj){
+            arr.push(obj[s]);
+        }
+        return arr;
     };
 
 
