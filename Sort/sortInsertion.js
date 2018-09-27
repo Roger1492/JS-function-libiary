@@ -8,7 +8,7 @@
  * @return {Array}
  */
 
-export function sortInsertion(arr) {
+function sortInsertion(arr) {
     let len = arr.length;
     let preIndex, current;
     for (let i = 1; i < len; i++) {

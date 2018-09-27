@@ -9,7 +9,7 @@
  * @return {Array}
  */
 
-import {sortInsertion} from './sortInsertion.js'
+// TODO: 有错误在 :40
 
 function sortBucket(arr, bucketSize) {
     if(arr.length === 0){
@@ -48,6 +48,21 @@ function sortBucket(arr, bucketSize) {
         for(let i = 0; j < buckets[i].length; j++){
             arr.push(buckets[i][j]);
         }
+    }
+    return arr;
+}
+
+function sortInsertion(arr) {
+    let len = arr.length;
+    let preIndex, current;
+    for (let i = 1; i < len; i++) {
+        preIndex = i - 1;
+        current = arr[i];
+        while (preIndex >= 0 && arr[preIndex] > current) {
+            arr[preIndex + 1] = arr[preIndex];
+            preIndex--;
+        }
+        arr[preIndex + 1] = current;
     }
     return arr;
 }
