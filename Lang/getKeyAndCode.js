@@ -1,4 +1,7 @@
 /**
+ * 
+ * 获取KeyCode和Code
+ * 
  * @description 引入到HTML文档中，随意按键盘上的一个键，即可输出keyCode和key。
  * 
  */

@@ -1,7 +1,13 @@
 /**
- * @desc 排序算法 - 冒泡排序
+ * 
+ * 排序算法 - 冒泡排序
+ * 
+ * @description
+ * 
+ * 
  * @param {Array}
  * @return {Array}
+ * 
  */
 
 function bubbleSort(arr) {
