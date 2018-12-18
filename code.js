@@ -117,7 +117,7 @@
 
     /**
      * 
-     * 返回数组中去除重复值后的新数组
+     * 数组去重
      * 
      * @since 0.1.0
      * @param {Array} array
@@ -126,7 +126,8 @@
      * 
      */
     _.uniq = function (array) {
-        return Array.from(new Set(array));
+        // return Array.from(new Set(array));
+        return [...new Set(array)]
     };
 
 
@@ -1057,6 +1058,16 @@
     }
 
 
+    /**
+     * 
+     * 浅拷贝
+     * 
+     * @since 0.1.0
+     * @param {Object} obj
+     * @returns {Object}
+     * @author Roger Shen
+     * 
+     */
     _.shadowCopy = function (obj) {
         if(typeof obj !== "object") return;
 
@@ -1088,7 +1099,7 @@
 
         for(var key in obj){
             if(obj.hasOwnProperty(key)) {
-                newObj[key] = typeof obj[key] === "object" ? this.deepCopy(obj[key]) : obj[key];
+                newObj[key] = typeof obj[key] === "object" ? _.deepCopy(obj[key]) : obj[key];
             }
         }
 
