@@ -97,21 +97,23 @@
 
     /**
      * 
-     * 返回打乱顺序后的新数组
+     * 乱序：返回打乱顺序后的新数组
      * 
      * @since 0.1.0
-     * @param {*} array
-     * @returns {*} array
+     * @param {Array} array
+     * @returns {Array} array
      * @author Roger Shen
      * 
      */
-    _.shuffle = function (array) {
-        for(let i = 0; i < array.length*10; i++){
-            let rd1 = Math.floor(Math.random() * array.length);
-            let rd2 = array.length-rd1-1;
-            _.replaceIndex(array, rd1, rd2);
+    _.shuffle = function (arr) {
+        
+        for(let i = arr.length; i; i--){
+            let j = Math.floor(Math.random() * i)
+            [arr[i-1], a[j]] = [a[j], arr[i-1]];
+            
         }
-        return array;
+
+        return arr;
     };
 
 
@@ -632,6 +634,29 @@
     _.last = _.tail = function (array) {
         return (array !== null && array.length) ? array[array.length - 1] : undefined;
     };
+
+
+    /**
+     * 
+     * 字符串分组
+     * 
+     * @since 0.1.0
+     * @parame {String} 要分组的字符串
+     * @param {Number} 要分的组数
+     * @author Roger Shen
+     * 
+     * @example 
+     * 
+     * _.group('qwertyuioplkjhgfdsazxcvbnm',3);
+     * // =>  ["qwe", "rty", "uio", "plk", "jhg", "fds", "azx", "cvb", "nm"]
+     */
+    _.group = function(str, num){
+        let arr = [];
+        for(let i = 0; i < str.length; i+=num){
+            arr.push(str.slice(i, i+num));
+        }
+        return arr;
+    }
 
 
     /**
