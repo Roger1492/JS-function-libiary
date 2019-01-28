@@ -5,12 +5,14 @@
 | 中文 | 英文 |
 |  -  |  -   |
 | [在数组随机选择一个元素](array/choice.js) | choice |
-| [数组去重](array/deleteRepeat.js) | delete repeat array |
+| [数组去重](array/uniq.js) | delete repeat array |
 | [返回数组中的第一个元素](array/first.js) | first element |
 | [返回数组中的最后一个元素](array/last.js) | last element |
 | [二维数组一维化(扁平化)](array/flatten.js) | flatten |
 | [生成指定范围内的数字](array/range.js) | range |
 | [统计数组中相同元素出现的次数](array/repeatCount.js) | repeat count |
+| [乱序](array/shuffle.js) | shuffle |
+| [删除数组中指定元素](array/remove.js) | remove |
 
 ## 字符串 String
 

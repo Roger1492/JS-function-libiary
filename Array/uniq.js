@@ -6,25 +6,25 @@
  * @version 0.1.0
  * 
  * @example
- * => console.log(deleteRepeat([2, 2, 3, 3, 4, 5, 6, 7, 1, 4, 3]));
+ * => console.log(uniq([2, 2, 3, 3, 4, 5, 6, 7, 1, 4, 3]));
  * => [ 2, 3, 4, 5, 6, 7, 1 ]
  * 
  */
 
 // 第一种方法
-function deleteRepeat(arr) {
+function uniq(arr) {
     return Array.from(new Set(arr));
 }
 
 // 第二种方法
-function deleteRepeat(arr) {
+function uniq(arr) {
     return arr.filter((item, index, array) => {
         array.indexOf(item) === index;
     })
 }
 
 // 第三种方法
-function deleteRepeat(arr) {
+function uniq(arr) {
     let newArr = [];
     for (let i = 0; i < arr.length; i++) {
         if (newArr.indexOf(arr[i]) === -1) {
