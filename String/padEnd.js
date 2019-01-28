@@ -1,7 +1,7 @@
 /**
  * @name 在原始字符串的后面填充指定长度的字符串。
  * @author Roger Shen
- * @version 0.1
+ * @version 0.1.0
  * @param {String} 原始字符串
  * @param {Number} 要填充的长度
  * @param {String} 要填充的字符串

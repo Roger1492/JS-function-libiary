@@ -105,5 +105,3 @@ var keyCode = {
 function getKeyCode(str) {
     return keyCode[str];
 }
-
-console.log(getKeyCode("j"));

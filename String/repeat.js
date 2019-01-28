@@ -23,5 +23,3 @@ function repeat(str, repeatNum){
     return s;
     
 }
-
-console.log(repeat("heo-", 4))

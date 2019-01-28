@@ -23,4 +23,4 @@ function padStart(OriginString, padLength, padString) {
     return a + OriginString;
 }
 
-console.log(padStart("test", 11, ""));
+console.log(padStart("test", 11, "85"));

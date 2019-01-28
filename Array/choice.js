@@ -5,11 +5,8 @@
  * @version 0.1
  */
 
-if(!Array.prototype.choice){
-    Array.prototype.choice = function(){
-        let len = this.length;
-        return this[Math.floor(Math.random() * len)];
-    };
+function choice(arr){
+    return arr[Math.floor(Math.random() * arr.length)]
 }
 
-console.log(["Lewis","Roger","Jim","Tom","Jack","John"].choice());
+console.log(choice(["Lewis","Roger","Jim","Tom","Jack","John"]));

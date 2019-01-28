@@ -1,5 +1,4 @@
 /**
- * @name 判断一个字符串是否在另一个字符串中
  * @description 判断一个字符串是否在另一个字符串中
  * @version 0.1
  * @author Roger Shen
@@ -17,10 +16,8 @@ function includes(str, substr, fromIndex) {
     }
 
     if (RegExp(substr, "g").test(str)) {
-        return "this is true";
+        return true;
     } else {
-        return "this is false";
+        return false;
     }
 }
-
-console.log(includes("Hello,world", "llo", 3));

@@ -123,4 +123,4 @@ function getkeyName(keycode) {
     }
 }
 
-console.log(getkeyName(2))
+console.log(getkeyName(66))

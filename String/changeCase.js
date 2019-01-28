@@ -3,13 +3,9 @@
  * @param {String}
  * @param {Number [1:首字母大写],[2:全部大写],[3:全部小写],[4:大小写转换]}
  * @return {String}
+ * @author Roge Shen
+ * @version 0.1.0
  */
-
-if (!String.prototype.changeCase) {
-  String.prototype.changeCase = function () {
-
-  };
-}
 
 function changeCase(s, type) {
   switch (type) {
@@ -36,4 +32,3 @@ function changeCase(s, type) {
       return str;
   }
 }
-console.log(changeCase("HeLlpFf", 2))

@@ -2,12 +2,15 @@
  * @description 5星的打分评测系统
  * @param {Number}
  * @return {String}
+ * @version 0.1.0
+ * @author Roger Shen
+ * 
+ * @example
+ * =>  console.log(Rating(2));
+ * => ★★☆☆☆
  */
 
- function getRating(rating){
+ function Rating(rating){
      if(rating > 5 && rating < 0) throw new Error("It's out of the range");
      return "★★★★★☆☆☆☆☆".substr(5-rating, 5);
  }
-
- // 示例
- console.log(getRating(2));
