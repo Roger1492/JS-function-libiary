@@ -13,17 +13,22 @@
 | [统计数组中相同元素出现的次数](array/repeatCount.js) | repeat count |
 | [乱序](array/shuffle.js) | shuffle |
 | [删除数组中指定元素](array/remove.js) | remove |
+| [删除数组前面指定个数的元素](array/drop.js) | drop |
+| [删除数组后面指定个数的元素](array/dropRight.js) | drop right |
+| [删除所有数组元素为falsy的值](array/compact.js) | compact |
+| [通过索引交换数组中的两个值](array/exchangeByIndex.js) | exchange by index |
+| [从array数组返回other数组中没有的值](array/difference.js)| difference|
 
 ## 字符串 String
 
 | 中文 | 英文 |
 |  -  |  -   |
 | [字母大小写切换](string/changeCase.js) | change case |
-| [判断一个字符串是否在另一个字符串中](string/includes.js) | includes |
 | [在原始字符串的后面填充指定长度的字符串](string/padEnd.js) | pad end |
 | [在原始字符串的前面填充指定长度的字符串](sting/padStart.js) | pad start |
 | [生成指定数量的字符串](string/repeat.js) | repeat |
 | [逆转字符串](string/reverse.js) | reverse |
+| [字符串分组](string/group.js) | group |
 
 ## 排序 Sort
 
@@ -39,6 +44,14 @@
 | [基数排序](sort/sortRadix.js) | Radix Sort |
 | [选择排序](sort/sortSelection.js) | Selection Sort |
 | [希尔排序](sort/sortShell.js) | Shell Sort |
+
+## 对象 Object
+
+| 中文 | 英文 |
+|  -  |  -   |
+| [返回集合的长度或者是可迭代字符串的长度](object/size.js) | size |
+| [浅拷贝](object/shadowCopy.js) | shadow copy |
+| [深拷贝](object/deepCopy.js) | deep copy |
 
 ## 数学 Math
 
@@ -70,11 +83,10 @@
 
 | 中文 | 英文 |
 |  -  |  -   |
-| [字符串分组](tools/group.js) | group |
 | [5星的打分评测系统](tools/rating.js) | rating |
 | [根据keycode获得键名](tools/getKeyName.js) | get key name |
 | [根据keyName获得keyCode](tools/getKeyCode.js) | get key code |
-| [二分法查找](toosl/binarySearch.js) | binary search |
-| [浅拷贝](tools/shadowCopy.js) | shadow copy |
-| [深拷贝](tools/deepCopy.js) | deep copy |
+| [二分法查找](tools/binarySearch.js) | binary search |
 | [去除字符串中的空格](tools/trim.js) | trim |
+| [去除字符串中的所有空格](tools/trimAll.js) | trim all |
+| [调换两个值的位置](tools/exchange.js) | exchange |

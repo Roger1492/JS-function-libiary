@@ -28,5 +28,3 @@ function group(str, num, separator){
   }
   return s.substr(0, s.length-1);
 }
-
-console.log(group('qwertyuioplkjhgfdsazxcvbnmht', 4, ','))

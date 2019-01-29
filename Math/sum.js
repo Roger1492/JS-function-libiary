@@ -17,5 +17,3 @@
 function sum(array){
     return array.reduce((a,b) => a + b);
 }
-
-console.log(sum([4,2,8,6]));
