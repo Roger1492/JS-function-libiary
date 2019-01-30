@@ -17,7 +17,14 @@
 | [删除数组后面指定个数的元素](array/dropRight.js) | drop right |
 | [删除所有数组元素为falsy的值](array/compact.js) | compact |
 | [通过索引交换数组中的两个值](array/exchangeByIndex.js) | exchange by index |
-| [从array数组返回other数组中没有的值](array/difference.js)| difference|
+| [从array数组返回other数组中没有的值](array/difference.js) | difference|
+| [把数组分成指定个数的n组](array/chunk.js) | chunk |
+| [对象拆分成数组对](array/pairs.js) | pairs |
+| [数组的对应项组成新的数组](array/zip.js) | zip |
+| [返回两个数组中的不同元素组成的新数组](array/xor.js) | xor |
+| [把多个数组列表中共同拥有的元素筛选出来组成一个新数组](array/intersection.js) // TOTO | intersection |
+| [返回数组索引为index的元素，如果是负数，则返回倒数的索引](array/nth.js) | nth |
+| [删除数组中所有指定的值](array/pull.js) | pull |
 
 ## 字符串 String
 
