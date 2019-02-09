@@ -3,20 +3,22 @@
  * @author Roger Shen
  * @version 0.1.0
  * @param {Array}
- * @param {String} 要删除的元素
+ * @param {Array} 要删除的元素组
  * @return {Array} 新数组
+ * 
+ * @example
+ * => var a = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n'];
+ * => console.log(remove(a, ['b','g','j','m']))
+ * => ['a','c','d','e','f','h','i','k','l','n']
  * 
  */
 
-function remove(arr, val){
-  for(let i = 0; i < arr.length; i++){
-    let index = arr.indexOf(val);
+function remove(arrayList, arrayValue){
+  for(let i = 0; i < arrayValue.length; i++){
+    let index = arrayList.indexOf(arrayValue[i]);
     if(index > -1){
-      arr.splice(index, 1);
+      arrayList.splice(index, 1);
     }
   }
-  return arr;
+  return arrayList;
 }
-
-var a = ['a','b','r','h','j','m','f'];
-console.log(remove(a, 'j'))
