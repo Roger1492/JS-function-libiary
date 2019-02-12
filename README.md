@@ -14,6 +14,7 @@
 | [返回数组中的第一个元素](array/first.js) | first element |
 | [二维数组一维化(扁平化)](array/flatten.js) | flatten |
 | [把多个数组列表中共同拥有的元素筛选出来组成一个新数组](array/intersection.js) // TOTO | intersection |
+| [把数组转化为带分隔符的字符串](array/join.js) | join |
 | [返回数组中的最后一个元素](array/last.js) | last element |
 | [对象拆分成数组对](array/pairs.js) | pairs |
 | [删除数组中指定元素](array/remove.js) | remove |
@@ -97,3 +98,4 @@
 |  -  |  -   |
 | [是否为Email地址](validate/isEmail.js) | is email |
 | [是否为IP地址](validate/isIP.js) | is IP |
+| [判断类型](validate/isType.js) | is type |
