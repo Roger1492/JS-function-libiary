@@ -8,18 +8,16 @@
  * 
  * @example
  * => let a = [1,2,894,3,4,5,6,7,333];
- * => console.log(max(a));
+ * => console.log(maxNum(a));
  * 
  */
 
-// TODO: 合为一个函数
-
 // 函数的apply方法实现
-function max(arr) {
+function maxNum(arr) {
     return Math.max.apply(null, arr);
 }
 
 // 函数的 call 方法和spread方法实现，
-function max(...num){
+function maxNum(...num){
     return Math.max.call(null, ...num);
 }

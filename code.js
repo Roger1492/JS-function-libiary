@@ -17,7 +17,7 @@
     };
 
     _.isFunction = function (f) {
-        return Object.prototype.toString.call(func) === "[object Function]";
+        return Object.prototype.toString.call(f) === "[object Function]";
     };
 
     _.isNumber = function (num) {

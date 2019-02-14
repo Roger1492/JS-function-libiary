@@ -31,9 +31,9 @@
 | 中文 | 英文 |
 |  -  |  -   |
 | [阶乘(递归函数)](math/factorial.js) | Factorial |
-| [斐波那契数列](math/fibonacci.js) //TODO | Fibonacci |
-| [最大数](math/maxNumber.js) | Maximum |
-| [最小数](math/minNumber.js) // TODO | Minimum |
+| [斐波那契数列](math/fibonacci.js) | Fibonacci |
+| [最大数](math/max.js) | Maximum Number |
+| [最小数](math/minNum.js) | Minimum Number |
 | [进制转换](math/positional_nonation.js) | Positional Notation |
 | [数组求和](math/sum.js) | Sum |
 
