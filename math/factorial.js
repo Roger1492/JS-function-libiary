@@ -8,7 +8,7 @@
 
 // 第一种方法：
 function fac(n) {
-    return (n === 0 || n === 1) ? 1 : n * fac(n - 1);
+    return (n === 0 || n === 1) ? n : n * fac(n - 1);
 }
 
 // 第二种方法：

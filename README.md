@@ -100,3 +100,4 @@
 | [是否为IP地址](validate/isIP.js) | is IP |
 | [判断类型](validate/isType.js) | is type |
 | [判断是否为元素类型](validate/isElement.js) | is Element |
+| [判断类型](validate/type.js) | type |
