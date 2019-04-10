@@ -88,6 +88,7 @@
 | [根据keyName获得keyCode](tools/getKeyCode.js) | get key code |
 | [二分法查找](tools/binarySearch.js) | binary search |
 | [去除字符串中的空格](tools/trim.js) | trim |
+| [敏感词处理](tools/sensitive.js) | sensitive |
 | [去除字符串中的所有空格](tools/trimAll.js) | trim all |
 | [调换两个值的位置](tools/exchange.js) | exchange |
 | [生成指定范围内的数字](array/range.js) | range |
