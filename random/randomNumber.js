@@ -5,8 +5,8 @@
  * @return {Number}
  */
 
- function randomNumber(min,max){
-    return Math.round(Math.random() * (max-min) + min);
- }
+function randomNumber(min, max) {
+   return Math.round(Math.random() * (max - min) + min);
+}
 
-console.log(randomNumber(10,60));
+console.log(randomNumber(10, 60));

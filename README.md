@@ -13,7 +13,7 @@
 | [通过索引交换数组中的两个值](array/exchangeByIndex.js) | exchange by index |
 | [返回数组中的第一个元素](array/first.js) | first element |
 | [二维数组一维化(扁平化)](array/flatten.js) | flatten |
-| [把多个数组列表中共同拥有的元素筛选出来组成一个新数组](array/intersection.js) // TOTO | intersection |
+| [把多个数组列表中共同拥有的元素筛选出来组成一个新数组](array/intersection.js) | intersection // TOTO |
 | [把数组转化为带分隔符的字符串](array/join.js) | join |
 | [返回数组中的最后一个元素](array/last.js) | last element |
 | [对象拆分成数组对](array/pairs.js) | pairs |
@@ -49,7 +49,7 @@
 
 | 中文 | 英文 |
 |  -  |  -   |
-| [随机生成颜色](random/randomColor.js) | random color |
+| [随机生成颜色](random/randomColor.js) | random color // TOTO |
 | [随机生成n个IP地址](random/randomIP.js) | random IP |
 | [生成指定范围内的随机数](random/randomNumber.js) | random number |
 

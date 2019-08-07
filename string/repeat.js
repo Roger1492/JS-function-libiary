@@ -13,6 +13,7 @@
  */
 
 function repeat(str, repeatNum) {
+    var s = "";
 
     // 如果repeatNum是正负无穷大或者是小于0，返回错误提示
     if (repeatNum === Infinity || repeatNum === -Infinity || repeatNum < 0) {
@@ -20,7 +21,6 @@ function repeat(str, repeatNum) {
     }
 
     repeatNum = Math.floor(repeatNum);
-    var s = "";
     for (let i = 0; i < repeatNum; i++) {
         s += str;
     }

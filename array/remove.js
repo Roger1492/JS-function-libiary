@@ -2,8 +2,8 @@
  * @description 删除数组中指定元素
  * @author Roger Shen
  * @version 0.1.0
- * @param {Array}
- * @param {Array} 要删除的元素组
+ * @param {Array} 原数组
+ * @param {String, Array} 要删除的数组或者数组元素
  * @return {Array} 新数组
  * 
  * @example
@@ -22,3 +22,5 @@ function remove(arrayList, arrayValue){
   }
   return arrayList;
 }
+
+console.log(remove(['a','b','c'], ['b', 'c']));

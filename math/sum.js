@@ -1,6 +1,6 @@
 /**
  * @description 数组求和
- * @param {Array}
+ * @param {Array} 数组
  * @return {Number}
  */
 
