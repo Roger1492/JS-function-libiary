@@ -44,6 +44,8 @@
 | [返回集合的长度或者是可迭代字符串的长度](object/size.js) | size |
 | [浅拷贝](object/shadowCopy.js) | shadow copy |
 | [深拷贝](object/deepCopy.js) | deep copy |
+| [返回对象的key](object/keys.js) | keys |
+| [返回对象的value](object/values.js) | values |
 
 ## 随机方法 Random
 
