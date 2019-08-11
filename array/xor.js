@@ -16,22 +16,22 @@
  */
 
 function xor(array1, array2) {
-  let newArr = [];
-  array1.forEach((ele1,ind1,arr1) => {
-      if(!array2.includes(ele1)){
-          newArr.push(ele1);
-      }
-      return newArr;
-  })
+    let newArr = [];
+    array1.forEach((ele1, ind1, arr1) => {
+        if (!array2.includes(ele1)) {
+            newArr.push(ele1);
+        }
+        return newArr;
+    })
 
-  array2.forEach((ele2,ind2,arr2) => {
-      if(!array1.includes(ele2)){
-          newArr.push(ele2);
-      }
-      return newArr;
-  })
+    array2.forEach((ele2, ind2, arr2) => {
+        if (!array1.includes(ele2)) {
+            newArr.push(ele2);
+        }
+        return newArr;
+    })
 
-  return newArr;
+    return newArr;
 };
 
-console.log(xor(['a','b'],[1,2]));
+console.log(xor(['a', 'b'], [1, 2, 'a']));

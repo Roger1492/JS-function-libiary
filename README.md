@@ -25,6 +25,7 @@
 | [删除数组中任意位置的元素,返回新数组](array/without.js) | without |
 | [返回两个数组中的不同元素组成的新数组](array/xor.js) | xor |
 | [数组的对应项组成新的数组](array/zip.js) | zip |
+| [n项数组合并](array/mergeArray.js) | merge array |
 
 ## 数学 Math
 
@@ -75,11 +76,13 @@
 | 中文 | 英文 |
 |  -  |  -   |
 | [字母大小写切换](string/changeCase.js) | change case |
+| [统计一段文本中指定文字出现的次数](string/keywordsCount.js) | keywrods count |
 | [在原始字符串的后面填充指定长度的字符串](string/padEnd.js) | pad end |
 | [在原始字符串的前面填充指定长度的字符串](sting/padStart.js) | pad start |
 | [生成指定数量的字符串](string/repeat.js) | repeat |
 | [逆转字符串](string/reverse.js) | reverse |
 | [字符串分组](string/group.js) | group |
+| [去除字符串中的空格](string/trim.js) | trim |
 
 ## 工具库	tools
 
@@ -89,9 +92,7 @@
 | [根据keycode获得键名](tools/getKeyName.js) | get key name |
 | [根据keyName获得keyCode](tools/getKeyCode.js) | get key code |
 | [二分法查找](tools/binarySearch.js) | binary search |
-| [去除字符串中的空格](tools/trim.js) | trim |
 | [敏感词处理](tools/sensitive.js) | sensitive |
-| [去除字符串中的所有空格](tools/trimAll.js) | trim all |
 | [调换两个值的位置](tools/exchange.js) | exchange |
 | [生成指定范围内的数字](array/range.js) | range |
 

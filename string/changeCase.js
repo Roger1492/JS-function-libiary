@@ -8,6 +8,7 @@
  */
 
 function changeCase(s, type) {
+  if(type && type !== 1 && type !== 2 && type !== 3 && type !==4) return;
   switch (type) {
     case 1:
       return s.substring(0, 1).toUpperCase() + s.substring(1).toLowerCase();
@@ -32,3 +33,5 @@ function changeCase(s, type) {
       return str;
   }
 }
+
+console.log(changeCase('Hello, worLD', 4))
