@@ -1,6 +1,6 @@
 /**
  * 
- * @description 统计一段文本中指定文字出现的次数
+ * @description 统计指定文字出现的次数
  * @author Roger Shen
  * @version 0.1.1
  * 

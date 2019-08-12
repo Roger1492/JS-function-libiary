@@ -25,7 +25,6 @@
 | [删除数组中任意位置的元素,返回新数组](array/without.js) | without |
 | [返回两个数组中的不同元素组成的新数组](array/xor.js) | xor |
 | [数组的对应项组成新的数组](array/zip.js) | zip |
-| [n项数组合并](array/mergeArray.js) | merge array |
 
 ## 数学 Math
 
@@ -52,7 +51,7 @@
 
 | 中文 | 英文 |
 |  -  |  -   |
-| [随机生成颜色](random/randomColor.js) | random color // TOTO |
+| [随机生成颜色](random/randomColor.js) | random color |
 | [随机生成n个IP地址](random/randomIP.js) | random IP |
 | [生成指定范围内的随机数](random/randomNumber.js) | random number |
 
@@ -75,26 +74,35 @@
 
 | 中文 | 英文 |
 |  -  |  -   |
+| [转换为驼峰命名法](string/camelCase.js) | camel case |
 | [字母大小写切换](string/changeCase.js) | change case |
-| [统计一段文本中指定文字出现的次数](string/keywordsCount.js) | keywrods count |
+| [字符串分组](string/group.js) | group |
+| [统计指定文字出现的次数](string/keywordsCount.js) | keywords count |
 | [在原始字符串的后面填充指定长度的字符串](string/padEnd.js) | pad end |
 | [在原始字符串的前面填充指定长度的字符串](sting/padStart.js) | pad start |
 | [生成指定数量的字符串](string/repeat.js) | repeat |
 | [逆转字符串](string/reverse.js) | reverse |
-| [字符串分组](string/group.js) | group |
 | [去除字符串中的空格](string/trim.js) | trim |
 
 ## 工具库	tools
 
 | 中文 | 英文 |
 |  -  |  -   |
+| [base64 编码](tools/base64decode.js) | base64 decode |
+| [base64 解码](tools/base64encode.js) | base64 encode |
 | [5星的打分评测系统](tools/rating.js) | rating |
 | [根据keycode获得键名](tools/getKeyName.js) | get key name |
 | [根据keyName获得keyCode](tools/getKeyCode.js) | get key code |
 | [二分法查找](tools/binarySearch.js) | binary search |
+| [去除字符串中的空格](tools/trim.js) | trim |
 | [敏感词处理](tools/sensitive.js) | sensitive |
+| [去除字符串中的所有空格](tools/trimAll.js) | trim all |
 | [调换两个值的位置](tools/exchange.js) | exchange |
 | [生成指定范围内的数字](array/range.js) | range |
+| [setCookie](array/setCookie.js) | set cookie |
+| [get cookie](array/getCookie.js) | get cookie |
+| [erase cookie](array/eraseCookie.js) | erase cookie |
+| [一个cookies库](array/cookies.js) | cookies |
 
 ## 验证方法 Validate
 

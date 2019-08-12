@@ -1,5 +1,5 @@
 /**
- * @name 在原始字符串的后面填充指定长度的字符串。
+ * @name 填充指定长度的字符串-后。
  * @author Roger Shen
  * @version 0.1.0
  * @param {String} 原始字符串

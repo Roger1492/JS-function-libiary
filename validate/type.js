@@ -12,13 +12,13 @@ var class2type = {};
   class2type['[object ' + item + ']'] = item.toLowerCase();
 })
 
-function type(obj){
+function type(obj) {
 
-  if(obj === null){
+  if (obj === null) {
     return obj + '';
   }
 
-  return typeof obj === 'object' || typeof obj === 'function' ? 
-        class2type[Object.prototype.toString.call(obj)] || 'object' : 
-        typeof obj;
+  return typeof obj === 'object' || typeof obj === 'function' ?
+    class2type[Object.prototype.toString.call(obj)] || 'object' :
+    typeof obj;
 }
