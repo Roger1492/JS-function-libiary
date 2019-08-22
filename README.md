@@ -90,6 +90,8 @@
 |  -  |  -   |
 | [base64 编码](tools/base64decode.js) | base64 decode |
 | [base64 解码](tools/base64encode.js) | base64 encode |
+| [函数防抖](tools/debounce.js) | debounce |
+| [函数节流](tools/throttle.js) | throttle |
 | [5星的打分评测系统](tools/rating.js) | rating |
 | [根据keycode获得键名](tools/getKeyName.js) | get key name |
 | [根据keyName获得keyCode](tools/getKeyCode.js) | get key code |
